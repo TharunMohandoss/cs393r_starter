@@ -109,14 +109,20 @@ void Navigation::ObservePointCloud(const vector<Vector2f>& cloud,
 	point_cloud_ = cloud;
 }
 
-float Navigation::CalcPointFPL(const Vector2f obstacle, float curvature) {
-
+float Navigation::CalcPointFPL(const Vector2f obstacle, float curvature, float &final_x, float &final_y) { 
 	// curvature = 0 
 	if(curvature == 0) {
 		if(obstacle.y()<=car_width/2 && obstacle.y()>=-car_width/2 && obstacle.x()>0) {
+			final_x = obstacle.x() - (car_length+wheel_base)/2;
+			final_y = 0;
+			if(final_x>2)
+			{
+				final_x = 2;
+				return 2;
+			}
 			return obstacle.x() - (car_length+wheel_base)/2;
 		} else {
-			return -1;
+			return std::numeric_limits<float>::max();
 		}
 	} else {
 		float radius = 1/curvature;
@@ -134,6 +140,23 @@ float Navigation::CalcPointFPL(const Vector2f obstacle, float curvature) {
 		} else {
 			theta1 = 2 * M_PI - acos(dotproduct1/(abs(radius) * r_obstacle));
 		}
+
+		float theta_max,r_goal, dotproduct;
+		r_goal = sqrt(pow(nav_goal_loc_.x(), 2) + pow(nav_goal_loc_.y() - radius, 2));
+		dotproduct = -radius * (nav_goal_loc_.y() - radius)/(abs(radius)*(r_goal));
+		if(nav_goal_loc_.x()>=0) {
+			theta_max = acos(dotproduct/(abs(radius) * r_obstacle));
+		} else {
+			theta_max = 2 * M_PI - acos(dotproduct/(abs(radius) * r_obstacle));
+		}
+
+		if (theta1 > theta_max)
+		{
+			theta1 = theta_max;
+		}
+
+		final_x = radius - radius * cos(theta1);
+		final_y = abs(radius) * sin(theta1);
 		
 		if(rmin <= r_obstacle && r_obstacle <= rs) {
 			// point hitting inner side
@@ -148,55 +171,77 @@ float Navigation::CalcPointFPL(const Vector2f obstacle, float curvature) {
 			return abs(radius * (theta1 - theta2));
 		}
 
-		return -1; 
+		return std::numeric_limits<float>::max(); 
 	}
 	
 }
 
 float Navigation::CalculateScore(float fpl, float clearance, float goal_dist) {
-	return fpl - goal_dist;
+	return fpl - 100*goal_dist;
+}
+
+float Navigation::CalcGoalDistance(float x_goal, float y_goal, float x_final, float y_final) {
+	return sqrt(pow(x_goal-x_final, 2) + pow(y_goal-y_final, 2));
 }
 
 vector<float> Navigation::SelectCurvature(vector<Vector2f> obstacles){
-	float cmin, cmax, step, max_fpl, max_fpl_curv, goal_dist;
+	float cmin, cmax, step, max_score, max_score_fpl, max_score_curv;
 
 	cmin = -5.0;
 	cmax = 5.0;
 	step = 1.0;
-	max_fpl = -1;
-	max_fpl_curv = 0;
+	max_score = -1;
+	max_score_fpl = -1;
+	max_score_curv = 0;
+	
 	for(float c=cmin; c<=cmax; c=c+step){
 		float min_fpl = std::numeric_limits<float>::max();
+		float min_fpl_x, min_fpl_y;
+		float final_x,final_y;
+		min_fpl_x = -1;
+		min_fpl_y = -1;
 		for(unsigned int i=0; i<obstacles.size(); i++){
-			float fpl = CalcPointFPL(obstacles[i], c);
+			float fpl = CalcPointFPL(obstacles[i], c,final_x,final_y);
 			if(fpl < min_fpl) {
 				min_fpl = fpl;
+				min_fpl_x = final_x;
+				min_fpl_y = final_y;
 			}
 		}
 		//compare score here
-		if(CalculateScore(min_fpl, ) > CalculateScore(max_fpl, )){
-			max_fpl = min_fpl;
-			max_fpl_curv = c;
+		// might be sketchy
+		float distance_goal = CalcGoalDistance(2, 0, min_fpl_x, min_fpl_y);
+		if(CalculateScore(min_fpl, 0, distance_goal) > max_score){
+			max_score = CalculateScore(min_fpl, 0, distance_goal);
+			max_score_fpl = min_fpl;
+			max_score_curv = c;
 		}
 	}
 	// probably 1D TOC 
 	vector<float> ret_val;
-	ret_val[0] = max_fpl;
-	ret_val[1] = max_fpl_curv;
+	ret_val.push_back(max_score_fpl);
+	ret_val.push_back(max_score_curv);
 	return ret_val;
 }
 
 void Navigation::Run() {
+	vector<float> ret_vals = SelectCurvature(point_cloud_);
+	std::cout<<"4\n";
+	float u = sqrt(pow(robot_vel_.x(), 2) + pow(robot_vel_.y(), 2));
+	float v = OneDTOC(u, 1, 4, -4, ret_vals[0]);
+	std::cout<<"5";
 
-	// drive_msg_.velocity = 1.0;
-	// drive_msg_.curvature = 0.0;
-	// drive_pub_.publish(drive_msg_);
+	drive_msg_.velocity = v;
+	drive_msg_.curvature = ret_vals[1];
+	// drive_msg_.velocity = 1;
+	// drive_msg_.curvature = 0;
+	drive_pub_.publish(drive_msg_);
 }
 
 //a_min is -ve i.e maximum decelertion
 //u_max is maximum speed allowed
 //a_max is +ve i.e maximum acceleration
-float 1DTOC(float u,float u_max,float a_max,float a_min,float s)
+float Navigation::OneDTOC(float u,float u_max,float a_max,float a_min,float s)
 {
 	float timestep = 1.0/20;
 	float s_min;
@@ -204,9 +249,11 @@ float 1DTOC(float u,float u_max,float a_max,float a_min,float s)
 	s_min = u*u/(2*-a_min);
 	if (s<s_min-error_margin)
 	{
-		return -1;
+		std::cout<<"in\n";
+		return u + u*u/(2*s)*timestep;
+		// return -1;
 	}
-	else if(u<u_maxu)//case 1 where the car isn't in maximum speed
+	else if(u<u_max)//case 1 where the car isn't in maximum speed
 	{
 		return u + a_max*timestep;
 	}
