@@ -112,6 +112,7 @@ void Navigation::ObservePointCloud(const vector<Vector2f>& cloud,
 float Navigation::CalcPointFPL(const Vector2f obstacle, float curvature, float &final_x, float &final_y) { 
 	// curvature = 0 
 	if(curvature == 0) {
+		// std::cout<<"alpha";
 		if(obstacle.y()<=car_width/2 && obstacle.y()>=-car_width/2 && obstacle.x()>0) {
 			final_x = obstacle.x() - (car_length+wheel_base)/2;
 			final_y = 0;
@@ -122,15 +123,19 @@ float Navigation::CalcPointFPL(const Vector2f obstacle, float curvature, float &
 			}
 			return obstacle.x() - (car_length+wheel_base)/2;
 		} else {
-			return std::numeric_limits<float>::max();
+			final_x = 2;
+			final_y = 0;
+			return 2;
 		}
 	} else {
+		// std::cout<<"beta";
 		float radius = 1/curvature;
 		float rmax, rs, rmin, r_obstacle;
 		rmax = sqrt(pow((car_length + wheel_base)/2, 2) + pow(car_width/2 + abs(radius), 2));
 		rmin = abs(radius) - car_width/2;
 		rs = sqrt(pow((car_length + wheel_base)/2, 2) + pow(abs(radius) - car_width/2, 2));
 		r_obstacle = sqrt(pow(obstacle.x(), 2) + pow(obstacle.y() - radius, 2));
+		// std::cout<<"rmax : "<<rmax<<", rmin : "<<rmin<<", r_obstacle : "<<r_obstacle<<", radius : "<<radius<<", rs : "<<rs<<"\n";
 
 		// generic for both the directions
 		float theta1, theta2, dotproduct1;
@@ -142,18 +147,21 @@ float Navigation::CalcPointFPL(const Vector2f obstacle, float curvature, float &
 		}
 
 		float theta_max,r_goal, dotproduct;
-		r_goal = sqrt(pow(nav_goal_loc_.x(), 2) + pow(nav_goal_loc_.y() - radius, 2));
-		dotproduct = -radius * (nav_goal_loc_.y() - radius)/(abs(radius)*(r_goal));
+		r_goal = sqrt(pow(2, 2) + pow(0 - radius, 2));
+		dotproduct = abs(radius)/sqrt((radius)*(radius) + 4);
 		if(nav_goal_loc_.x()>=0) {
-			theta_max = acos(dotproduct/(abs(radius) * r_obstacle));
+			theta_max = acos(dotproduct/(abs(radius) * r_goal));
 		} else {
-			theta_max = 2 * M_PI - acos(dotproduct/(abs(radius) * r_obstacle));
+			theta_max = 2 * M_PI - acos(dotproduct/(abs(radius) * r_goal));
 		}
+
+		// std::cout<<"Theta max: "<<theta_max<<", Theta_1: "<<theta1<<"\n";
 
 		if (theta1 > theta_max)
 		{
 			theta1 = theta_max;
 		}
+
 
 		final_x = radius - radius * cos(theta1);
 		final_y = abs(radius) * sin(theta1);
@@ -169,15 +177,17 @@ float Navigation::CalcPointFPL(const Vector2f obstacle, float curvature, float &
 			
 			theta2 = asin((car_length + wheel_base)/(2 * r_obstacle));
 			return abs(radius * (theta1 - theta2));
+		} else {
+			return abs(radius * theta_max); 
 		}
 
-		return std::numeric_limits<float>::max(); 
+		 
 	}
 	
 }
 
 float Navigation::CalculateScore(float fpl, float clearance, float goal_dist) {
-	return fpl - 100*goal_dist;
+	return fpl - 10*goal_dist;
 }
 
 float Navigation::CalcGoalDistance(float x_goal, float y_goal, float x_final, float y_final) {
@@ -189,12 +199,14 @@ vector<float> Navigation::SelectCurvature(vector<Vector2f> obstacles){
 
 	cmin = -5.0;
 	cmax = 5.0;
-	step = 1.0;
-	max_score = -1;
+	step = 0.2;
+	max_score = -std::numeric_limits<float>::max();
+	std::cout<<"min : "<<max_score<<"\n";
 	max_score_fpl = -1;
 	max_score_curv = 0;
 	
 	for(float c=cmin; c<=cmax; c=c+step){
+		// std::cout<<"curvature : "<<c<<",max_score_fpl : "<<max_score_fpl<<"\n";
 		float min_fpl = std::numeric_limits<float>::max();
 		float min_fpl_x, min_fpl_y;
 		float final_x,final_y;
@@ -202,6 +214,7 @@ vector<float> Navigation::SelectCurvature(vector<Vector2f> obstacles){
 		min_fpl_y = -1;
 		for(unsigned int i=0; i<obstacles.size(); i++){
 			float fpl = CalcPointFPL(obstacles[i], c,final_x,final_y);
+			// std::cout<<"i : "<<i<<", fpl : "<<fpl<<", min_fpl : "<<min_fpl<<"\n";
 			if(fpl < min_fpl) {
 				min_fpl = fpl;
 				min_fpl_x = final_x;
@@ -210,9 +223,13 @@ vector<float> Navigation::SelectCurvature(vector<Vector2f> obstacles){
 		}
 		//compare score here
 		// might be sketchy
+
 		float distance_goal = CalcGoalDistance(2, 0, min_fpl_x, min_fpl_y);
-		if(CalculateScore(min_fpl, 0, distance_goal) > max_score){
-			max_score = CalculateScore(min_fpl, 0, distance_goal);
+		float cur_score = CalculateScore(min_fpl, 0, distance_goal);
+		// std::cout<<"curvature : "<<c<<" cur_scor e: "<<cur_score<<", max_score : "<<max_score<<"\n";
+		// std::cout<<"distance_goal : "<<distance_goal<<", min_fpl : "<<min_fpl<<"\n";
+		if(cur_score > max_score){
+			max_score = cur_score;
 			max_score_fpl = min_fpl;
 			max_score_curv = c;
 		}
@@ -226,10 +243,9 @@ vector<float> Navigation::SelectCurvature(vector<Vector2f> obstacles){
 
 void Navigation::Run() {
 	vector<float> ret_vals = SelectCurvature(point_cloud_);
-	std::cout<<"4\n";
+	std::cout<<"FPL: "<<ret_vals[0]<<", Curvature: "<<ret_vals[1]<<"\n";
 	float u = sqrt(pow(robot_vel_.x(), 2) + pow(robot_vel_.y(), 2));
 	float v = OneDTOC(u, 1, 4, -4, ret_vals[0]);
-	std::cout<<"5";
 
 	drive_msg_.velocity = v;
 	drive_msg_.curvature = ret_vals[1];
@@ -245,11 +261,11 @@ float Navigation::OneDTOC(float u,float u_max,float a_max,float a_min,float s)
 {
 	float timestep = 1.0/20;
 	float s_min;
-	float error_margin = 0.3;
+	float error_margin = 0;
 	s_min = u*u/(2*-a_min);
 	if (s<s_min-error_margin)
 	{
-		std::cout<<"in\n";
+		// std::cout<<"in\n";
 		return u + u*u/(2*s)*timestep;
 		// return -1;
 	}

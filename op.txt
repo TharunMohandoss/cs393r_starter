@@ -1,0 +1,2353 @@
+min : -3.40282e+38
+curvature : -5 cur_scor e: 3.40282e+38, max_score : -3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 0 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 5 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+FPL: 3.40282e+38, Curvature: -5
+min : -3.40282e+38
+curvature : -5 cur_scor e: 3.40282e+38, max_score : -3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 0 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 5 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+FPL: 3.40282e+38, Curvature: -5
+min : -3.40282e+38
+curvature : -5 cur_scor e: 3.40282e+38, max_score : -3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 0 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 5 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+FPL: 3.40282e+38, Curvature: -5
+min : -3.40282e+38
+curvature : -5 cur_scor e: 3.40282e+38, max_score : -3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 0 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 5 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+FPL: 3.40282e+38, Curvature: -5
+min : -3.40282e+38
+curvature : -5 cur_scor e: 3.40282e+38, max_score : -3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 0 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 5 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+FPL: 3.40282e+38, Curvature: -5
+min : -3.40282e+38
+curvature : -5 cur_scor e: 3.40282e+38, max_score : -3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 0 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 5 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+FPL: 3.40282e+38, Curvature: -5
+min : -3.40282e+38
+curvature : -5 cur_scor e: 3.40282e+38, max_score : -3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : -1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 0 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 1 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 2 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 3 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 4 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+curvature : 5 cur_scor e: 3.40282e+38, max_score : 3.40282e+38
+distance_goal : 3.16228, min_fpl : 3.40282e+38
+FPL: 3.40282e+38, Curvature: -5
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 2, max_score : -1.59704
+distance_goal : 0, min_fpl : 2
+curvature : 1 cur_scor e: -0.179755, max_score : 2
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 2
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 2
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 2
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 2
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 2, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 2, max_score : -1.59704
+distance_goal : 0, min_fpl : 2
+curvature : 1 cur_scor e: -0.179755, max_score : 2
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 2
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 2
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 2
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 2
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 2, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 2, max_score : -1.59704
+distance_goal : 0, min_fpl : 2
+curvature : 1 cur_scor e: -0.179755, max_score : 2
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 2
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 2
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 2
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 2
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 2, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.99242, max_score : -1.59704
+distance_goal : 0.00379217, min_fpl : 1.99621
+curvature : 1 cur_scor e: -0.179755, max_score : 1.99242
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.99242
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.99242
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.99242
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.99242
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.99621, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.99242, max_score : -1.59704
+distance_goal : 0.00379217, min_fpl : 1.99621
+curvature : 1 cur_scor e: -0.179755, max_score : 1.99242
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.99242
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.99242
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.99242
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.99242
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.99621, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.99242, max_score : -1.59704
+distance_goal : 0.00379217, min_fpl : 1.99621
+curvature : 1 cur_scor e: -0.179755, max_score : 1.99242
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.99242
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.99242
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.99242
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.99242
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.99621, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.99242, max_score : -1.59704
+distance_goal : 0.00379217, min_fpl : 1.99621
+curvature : 1 cur_scor e: -0.179755, max_score : 1.99242
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.99242
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.99242
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.99242
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.99242
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.99621, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.98801, max_score : -1.59704
+distance_goal : 0.00599539, min_fpl : 1.994
+curvature : 1 cur_scor e: -0.179755, max_score : 1.98801
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.98801
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.98801
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.98801
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.98801
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.994, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.98801, max_score : -1.59704
+distance_goal : 0.00599539, min_fpl : 1.994
+curvature : 1 cur_scor e: -0.179755, max_score : 1.98801
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.98801
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.98801
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.98801
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.98801
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.994, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.98801, max_score : -1.59704
+distance_goal : 0.00599539, min_fpl : 1.994
+curvature : 1 cur_scor e: -0.179755, max_score : 1.98801
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.98801
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.98801
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.98801
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.98801
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.994, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.98801, max_score : -1.59704
+distance_goal : 0.00599539, min_fpl : 1.994
+curvature : 1 cur_scor e: -0.179755, max_score : 1.98801
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.98801
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.98801
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.98801
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.98801
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.994, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.98801, max_score : -1.59704
+distance_goal : 0.00599539, min_fpl : 1.994
+curvature : 1 cur_scor e: -0.179755, max_score : 1.98801
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.98801
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.98801
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.98801
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.98801
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.994, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.98801, max_score : -1.59704
+distance_goal : 0.00599539, min_fpl : 1.994
+curvature : 1 cur_scor e: -0.179755, max_score : 1.98801
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.98801
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.98801
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.98801
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.98801
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.994, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.98801, max_score : -1.59704
+distance_goal : 0.00599539, min_fpl : 1.994
+curvature : 1 cur_scor e: -0.179755, max_score : 1.98801
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.98801
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.98801
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.98801
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.98801
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.994, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.98801, max_score : -1.59704
+distance_goal : 0.00599539, min_fpl : 1.994
+curvature : 1 cur_scor e: -0.179755, max_score : 1.98801
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.98801
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.98801
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.98801
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.98801
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.994, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97843, max_score : -1.59704
+distance_goal : 0.0107869, min_fpl : 1.98921
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97843
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97843
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97843
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97843
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97843
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98921, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97814, max_score : -1.59704
+distance_goal : 0.0109316, min_fpl : 1.98907
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97814
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97814
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97814
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97814
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97814
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98907, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97814, max_score : -1.59704
+distance_goal : 0.0109316, min_fpl : 1.98907
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97814
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97814
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97814
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97814
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97814
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98907, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97814, max_score : -1.59704
+distance_goal : 0.0109316, min_fpl : 1.98907
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97814
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97814
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97814
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97814
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97814
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98907, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97814, max_score : -1.59704
+distance_goal : 0.0109316, min_fpl : 1.98907
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97814
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97814
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97814
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97814
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97814
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98907, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97814, max_score : -1.59704
+distance_goal : 0.0109316, min_fpl : 1.98907
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97814
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97814
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97814
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97814
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97814
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98907, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97814, max_score : -1.59704
+distance_goal : 0.0109316, min_fpl : 1.98907
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97814
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97814
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97814
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97814
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97814
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98907, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97814, max_score : -1.59704
+distance_goal : 0.0109316, min_fpl : 1.98907
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97814
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97814
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97814
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97814
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97814
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98907, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97814, max_score : -1.59704
+distance_goal : 0.0109316, min_fpl : 1.98907
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97814
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97814
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97814
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97814
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97814
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98907, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97814, max_score : -1.59704
+distance_goal : 0.0109316, min_fpl : 1.98907
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97814
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97814
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97814
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97814
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97814
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98907, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
+min : -3.40282e+38
+curvature : -5 cur_scor e: -1.89507, max_score : -3.40282e+38
+distance_goal : 2.15921, min_fpl : 0.264134
+curvature : -4 cur_scor e: -1.87131, max_score : -1.89507
+distance_goal : 2.20183, min_fpl : 0.330522
+curvature : -3 cur_scor e: -1.83365, max_score : -1.87131
+distance_goal : 2.27534, min_fpl : 0.441696
+curvature : -2 cur_scor e: -1.76477, max_score : -1.83365
+distance_goal : 2.43141, min_fpl : 0.666638
+curvature : -1 cur_scor e: -1.59704, max_score : -1.76477
+distance_goal : 2.96648, min_fpl : 1.36944
+curvature : 0 cur_scor e: 1.97718, max_score : -1.59704
+distance_goal : 0.0114082, min_fpl : 1.98859
+curvature : 1 cur_scor e: -0.179755, max_score : 1.97718
+distance_goal : 1.54919, min_fpl : 1.36944
+Exiting.
+curvature : 2 cur_scor e: -1.02243, max_score : 1.97718
+distance_goal : 1.68907, min_fpl : 0.666638
+curvature : 3 cur_scor e: -1.33571, max_score : 1.97718
+distance_goal : 1.7774, min_fpl : 0.441696
+curvature : 4 cur_scor e: -1.49715, max_score : 1.97718
+distance_goal : 1.82767, min_fpl : 0.330522
+curvature : 5 cur_scor e: -1.59549, max_score : 1.97718
+distance_goal : 1.85963, min_fpl : 0.264134
+FPL: 1.98859, Curvature: 0
