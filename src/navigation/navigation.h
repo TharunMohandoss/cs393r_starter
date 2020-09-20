@@ -62,7 +62,7 @@ class Navigation {
   // Updates based on an observed laser scan
   void ObservePointCloud(const std::vector<Eigen::Vector2f>& cloud,
                          double time);
-	float CalcPointFPL(const Vector2f obstacles, float radius, float &final_x, float &final_y);
+	float CalcPointFPL(const Vector2f obstacles, float radius, float &final_x, float &final_y,bool debug);
 	float CalculateScore(float fpl, float clearance, float goal_dist);
   float CalcGoalDistance(float x_goal, float y_goal, float x_final, float y_final);
 	vector<float> SelectCurvature(vector<Vector2f> obstacles);
