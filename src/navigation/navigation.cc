@@ -37,7 +37,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <limits>
-
+#include <algorithm>
 using Eigen::Vector2f;
 using amrl_msgs::AckermannCurvatureDriveMsg;
 using amrl_msgs::VisualizationMsg;
@@ -62,6 +62,8 @@ const float car_width = 0.281;
 const float car_length = 0.535;
 const float car_height = 0.15;
 const float wheel_base = 0.324;
+const float clearance_length = 0.2;
+const float clearance_width = 0.1;
 } //namespace
 
 namespace navigation {
@@ -105,36 +107,56 @@ void Navigation::UpdateOdometry(const Vector2f& loc,
 	// std::cout<<"robot_loc_.x() : "<<robot_loc_.x()<<", robot_loc_.y() : "<<robot_loc_.y()<<"robot_angle_ : "<<robot_angle_<<"\n";
 }
 
-void Navigation::ObservePointCloud(const vector<Vector2f>& cloud,
+void Navigation::ObservePointCloud(const vector<Vector2f> cloud,
                                    double time) {
 	point_cloud_ = cloud;
 }
 
 float Navigation::CalcPointFPL(const Vector2f obstacle, float curvature, float &final_x, float &final_y, bool debug) { 
 	// curvature = 0 
-	if(abs(curvature) < 0.01) {
+	if(abs(curvature) < 0.0001) {
 		// std::cout<<"alpha";
-		if(obstacle.y()<=car_width/2 && obstacle.y()>=-car_width/2 && obstacle.x()>0) {
-			final_x = obstacle.x() - (car_length+wheel_base)/2;
+		if(obstacle.y()<=(car_width+2*clearance_width)/2 && obstacle.y()>=-(car_width+2*clearance_width)/2 && obstacle.x()>0) {
+			final_x = obstacle.x() - ((car_length+2*clearance_length)+wheel_base)/2;
+			// if(debug)
+			// {
+			// 	std::cout<<"obstacle y : "<<obstacle.y()<<",obstacle x : "<<obstacle.x()<<"((car_length+2*clearance_length)+wheel_base)/2 : "<<((car_length+2*clearance_length)+wheel_base)/2<<"\n";
+			// }
 			final_y = nav_goal_loc_.y();
 			if(final_x>nav_goal_loc_.x())
 			{
 				final_x = nav_goal_loc_.x();
+				// if(debug)
+				// {
+				// 	visualization::DrawCross(Vector2f(final_x,final_y),.2, 0x00FF00, local_viz_msg_);
+				// }
 				return nav_goal_loc_.x();
 			}
-			return obstacle.x() - (car_length+wheel_base)/2;
+			// if(debug)
+			// {
+			// 	visualization::DrawCross(Vector2f(final_x,final_y),.2, 0x00FF00, local_viz_msg_);
+			// }
+			return obstacle.x() - ((car_length+2*clearance_length)+wheel_base)/2;
 		} else {
 			final_x = nav_goal_loc_.x();
 			final_y = nav_goal_loc_.y();
+			// if(debug)
+			// {
+			// 	visualization::DrawCross(Vector2f(final_x,final_y),.2, 0x00FF00, local_viz_msg_);
+			// }
 			return nav_goal_loc_.x();
 		}
 	} else {
+		// if(debug)
+		// {
+		// 	visualization::DrawCross(Vector2f(obstacle.x(),obstacle.y()),.2, 0xFF0000, local_viz_msg_);
+		// }
 		// std::cout<<"beta";
 		float radius = 1/curvature;
 		float rmax, rs, rmin, r_obstacle;
-		rmax = sqrt(pow((car_length + wheel_base)/2, 2) + pow(car_width/2 + abs(radius), 2));
-		rmin = abs(radius) - car_width/2;
-		rs = sqrt(pow((car_length + wheel_base)/2, 2) + pow(abs(radius) - car_width/2, 2));
+		rmax = sqrt(pow(((car_length+2*clearance_length) + wheel_base)/2, 2) + pow((car_width+2*clearance_width)/2 + abs(radius), 2));
+		rmin = abs(radius) - (car_width+2*clearance_width)/2;
+		rs = sqrt(pow(((car_length+2*clearance_length) + wheel_base)/2, 2) + pow(abs(radius) - (car_width+2*clearance_width)/2, 2));
 		r_obstacle = sqrt(pow(obstacle.x(), 2) + pow(obstacle.y() - radius, 2));
 		// if(debug)
 		// {
@@ -151,6 +173,7 @@ float Navigation::CalcPointFPL(const Vector2f obstacle, float curvature, float &
 		}
 
 		// float theta_max, dotproduct;
+		// bool in =false;
 		// // r_goal = sqrt(pow(nav_goal_loc_.x(), 2) + pow(0 - radius, 2));
 		// dotproduct = abs(radius)/sqrt((radius)*(radius) + nav_goal_loc_.x()*nav_goal_loc_.x());
 		// if(nav_goal_loc_.x()>=0) {
@@ -163,24 +186,40 @@ float Navigation::CalcPointFPL(const Vector2f obstacle, float curvature, float &
 
 		// if (theta1 > theta_max)
 		// {
+		// 	in = true;
 		// 	theta1 = theta_max;
 		// }
 
 
 		
-		if(debug)
-		{
-			// std::cout<<"1_rmax : "<<rmax<<", rmin : "<<rmin<<", r_obstacle : "<<r_obstacle<<", radius : "<<radius<<", rs : "<<rs<<"\n";
-		}
+		// if(debug)
+		// {
+		// 	// std::cout<<"1_rmax : "<<rmax<<", rmin : "<<rmin<<", r_obstacle : "<<r_obstacle<<", radius : "<<radius<<", rs : "<<rs<<"\n";
+		// }
 		if(rmin <= r_obstacle && r_obstacle <= rs) {
 			// point hitting inner side
 
 			theta2 = acos(rmin/r_obstacle);
+			// if(in)
+			// {
+			// 	theta1 = theta1 + theta2;
+			// }
 
 			// std::cout<<"1_rmax : "<<rmax<<", rmin : "<<rmin<<", r_obstacle : "<<r_obstacle<<", radius : "<<radius<<", rs : "<<rs<<"\n";
+			// if(debug)
+			// {
+			// 	std::cout<<"in1  : Theta1: "<<theta1<<", Theta2: "<<theta2<<", X: "<<obstacle.x()<<", Y: "<<obstacle.y()<<"\n";
+			// 	std::cout<<"retval : "<<abs(radius * (theta1 - theta2))<<"\n";
+			// }
 			// std::cout<<"Theta1: "<<theta1<<", Theta2: "<<theta2<<", X: "<<obstacle.x()<<", Y: "<<obstacle.y()<<"\n";
 			final_y = radius - radius * cos(theta1-theta2);
 			final_x = abs(radius) * sin(theta1-theta2);
+			// if(debug)
+			// {
+			// 	// float start_angle = 3.14/2
+			// 	visualization::DrawCross(Vector2f(final_x,final_y),.2, 0x00FF00, local_viz_msg_);
+			// 	visualization::DrawArc(Vector2f(0, radius), abs(radius),-3.14,3.14, 0x3b72d3, local_viz_msg_);
+			// }
 			return abs(radius * (theta1 - theta2));
 
 			
@@ -189,23 +228,47 @@ float Navigation::CalcPointFPL(const Vector2f obstacle, float curvature, float &
 			// std::cout<<"2_rmax : "<<rmax<<", rmin : "<<rmin<<", r_obstacle : "<<r_obstacle<<", radius : "<<radius<<", rs : "<<rs<<"\n";
 			// std::cout<<"Theta1: "<<theta1<<", Theta2: "<<theta2<<", X: "<<obstacle.x()<<", Y: "<<obstacle.y()<<"\n";
 			
-			theta2 = asin((car_length + wheel_base)/(2 * r_obstacle));
+			theta2 = asin(((car_length+2*clearance_length) + wheel_base)/(2 * r_obstacle));
+			// if(in)
+			// {
+			// 	theta1 = theta1 + theta2;
+			// }
 			final_y = radius - radius * cos(theta1-theta2);
 			final_x = abs(radius) * sin(theta1-theta2);
+			// if(debug)
+			// {
+			// 	visualization::DrawCross(Vector2f(final_x,final_y),.2, 0x00FF00, local_viz_msg_);
+			// 	visualization::DrawArc(Vector2f(0, radius), abs(radius),-3.14,3.14, 0x3b72d3, local_viz_msg_);
+			// }
+			// if(debug)
+			// {
+			// 	std::cout<<"in2  : Theta1: "<<theta1<<", Theta2: "<<theta2<<", X: "<<obstacle.x()<<", Y: "<<obstacle.y()<<"\n";
+			// 	std::cout<<"retval : "<<abs(radius * (theta1 - theta2))<<"\n";
+			// }
 			return abs(radius * (theta1 - theta2));
 		} else {
 			final_x = 0;
 			final_y = 0;
+			// if(debug)
+			// {
+			// 	visualization::DrawCross(Vector2f(final_x,final_y),.2, 0x00FF00, local_viz_msg_);
+			// 	visualization::DrawArc(Vector2f(0, radius), abs(radius),-3.14,3.14, 0x3b72d3, local_viz_msg_);
+			// }
+			// if(debug)
+			// {
+			// 	std::cout<<"in3 \n";
+			// 	std::cout<<"retval : "<<abs(radius * 6.28)<<"\n";
+			// }
 			return abs(radius * 6.28); 
 		}
 
 		 
 	}
 	
-}
+}	
 
 float Navigation::CalculateScore(float fpl, float clearance, float goal_dist) {
-	return -goal_dist;
+	return 10*fpl-goal_dist;
 }
 
 float Navigation::CalcGoalDistance(float x_goal, float y_goal, float x_final, float y_final) {
@@ -213,16 +276,18 @@ float Navigation::CalcGoalDistance(float x_goal, float y_goal, float x_final, fl
 }
 
 vector<float> Navigation::SelectCurvature(vector<Vector2f> obstacles){
-	float cmin, cmax, step, max_score, max_score_fpl, max_score_curv;
+	// float cmin, cmax, step, 
+	float max_score, max_score_fpl, max_score_curv;
+	float curvatures[] = {-6,-5,-4,-3,-2.5,-2,-1.5,-0.9,-0.7,-0.5,-0.3,-0.2,-0.1,0,0.1,0.2,0.3,0.5,0.7,0.9,1.5,2,2.5,3,4,5,6};
 
-	cmin = -2.0;
-	cmax = 2.0;
-	step = 0.2	;
+	// cmin = -6.0;
+	// cmax = 6.0;
+	// step = 0.3;
 	max_score = -std::numeric_limits<float>::max();
 	// std::cout<<"min : "<<max_score<<"\n";
 	max_score_fpl = -1;
 	max_score_curv = 0;
-	std::cout<<"selecting curvature\n";
+	// std::cout<<"selecting curvature\n";
 	
 	// for(float c=cmin; c<=cmax; c=c+step){
 	// 	// visualization::ClearVisualizationMsg(local_viz_msg_);
@@ -233,37 +298,40 @@ vector<float> Navigation::SelectCurvature(vector<Vector2f> obstacles){
 	// 	// viz_pub_.publish(local_viz_msg_);
 	// }
 
-	for(float c=cmin; c<=cmax; c=c+step){
+	// for(float c=cmin; c<=cmax; c=c+step){
+	for(unsigned int current=0; current<sizeof(curvatures)/sizeof(float); current++){
+		float c = curvatures[current];
 		// std::cout<<"curvature : "<<c<<",max_score_fpl : "<<max_score_fpl<<"\n";
 		float min_fpl = std::numeric_limits<float>::max();
 		float min_fpl_x, min_fpl_y;
 		float final_x,final_y;
 		min_fpl_x = -1;
 		min_fpl_y = -1;
-		// int min_obstacle = -1;
+		int min_obstacle = -1;
 		for(unsigned int i=0; i<obstacles.size(); i++){
 			float fpl = CalcPointFPL(obstacles[i], c,final_x,final_y,false);
 			// std::cout<<"i : "<<i<<", fpl : "<<fpl<<", min_fpl : "<<min_fpl<<"\n";
 			if(fpl <= min_fpl) {
-				// min_obstacle = i;
+				min_obstacle = i;
 				min_fpl = fpl;
 				min_fpl_x = final_x;
 				min_fpl_y = final_y;
 			}
 		}
-		// if (min_obstacle!=-1)
-		// {
-		// 	std::cout<<"c : "<<c<<"min_i : "<<min_obstacle<<"\n";
-		// 	std::cout<<"obstacle x : "<<obstacles[min_obstacle].x()<<", obstacle y : "<<obstacles[min_obstacle].y()<<"\n";
-		// 	CalcPointFPL(obstacles[min_obstacle], c,final_x,final_y,true);
-		// }
+		if (min_obstacle!=-1)
+		{
+			// std::cout<<"c : "<<c<<"min_i : "<<min_obstacle<<"\n";
+			// std::cout<<"obstacle x : "<<obstacles[min_obstacle].x()<<", obstacle y : "<<obstacles[min_obstacle].y()<<"\n";
+			CalcPointFPL(obstacles[min_obstacle], c,final_x,final_y,true);
+		}
 		//compare score here
 		// might be sketchy
 		// std::cout<<"min_fpl_x : "<<min_fpl_x<<", "<<min_fpl_y<<"\n";
 		float distance_goal = CalcGoalDistance(nav_goal_loc_.x(), 0, min_fpl_x, min_fpl_y);
 		float cur_score = CalculateScore(min_fpl, 0, distance_goal);
-		// std::cout<<"curvature : "<<c<<" cur_score: "<<cur_score<<", max_score : "<<max_score<<"\n";
-		// std::cout<<"distance_goal : "<<distance_goal<<", min_fpl : "<<min_fpl<<"\n";
+		// std::cout<<"min_fpl_x : "<<min_fpl_x<<", min_fpl_y : "<<min_fpl_y<<"\n";
+		// std::cout<<"curvature : "<<c<<" cur_score: "<<cur_score<<", max_score : "<<max_score<<" max_score_c : "<<max_score_curv<<"\n";
+		// std::cout<<"distance_goal : "<<distance_goal<<", min_fpl : "<<min_fpl<<"\n\n";
 		if(cur_score > max_score){
 			max_score = cur_score;
 			max_score_fpl = min_fpl;
@@ -279,6 +347,8 @@ vector<float> Navigation::SelectCurvature(vector<Vector2f> obstacles){
 
 void Navigation::Run() {
 	// visualization::ClearVisualizationMsg(local_viz_msg_);
+	// viz_pub_.publish(local_viz_msg_);
+	// visualization::ClearVisualizationMsg(local_viz_msg_);
 	vector<float> ret_vals = SelectCurvature(point_cloud_);
 	nav_goal_loc_ = Vector2f(10,0);
 	// visualization::DrawCross(nav_goal_loc_,2, 0xFF0000, local_viz_msg_);
@@ -286,10 +356,12 @@ void Navigation::Run() {
 	// visualization::DrawCross(Vector2f(1.7957, 4.23938),2, 0xFF0000, local_viz_msg_);
 	// visualization::DrawCross(Vector2f(3.27161, -1.21892),2, 0xFF0000, local_viz_msg_);
 	// viz_pub_.publish(local_viz_msg_);
-	std::cout<<"FPL: "<<ret_vals[0]<<", Curvature: "<<ret_vals[1]<<"\n";
-	float u = sqrt(pow(robot_vel_.x(), 2) + pow(robot_vel_.y(), 2));
-	float v = OneDTOC(u, 1, 4, -4, ret_vals[0]);
-	std::cout<<"u : "<<u<<", v : "<<v<<"\n";
+	// std::cout<<"FPL: "<<ret_vals[0]<<", Curvature: "<<ret_vals[1]<<"\n";
+	// float u = sqrt(pow(robot_vel_.x(), 2) + pow(robot_vel_.y(), 2));
+	// std::cout<<"robot_vel_.x() : "<<robot_vel_.x()<<", robot_vel_.y() : "<<robot_vel_.y()<<"\n";
+	float v = OneDTOC(prev_velocity, 1, 4, -4, ret_vals[0]);
+	// std::cout<<"u : "<<prev_velocity<<", v : "<<v<<"\n";
+	prev_velocity = v;
 
 	drive_msg_.velocity = v;
 	drive_msg_.curvature = ret_vals[1];
@@ -307,10 +379,20 @@ float Navigation::OneDTOC(float u,float u_max,float a_max,float a_min,float s)
 	float s_min;
 	float error_margin = 0;
 	s_min = u*u/(2*-a_min);
-	if (s<s_min-error_margin)
+	if(s<0.02)
+	{
+		return 0;
+	}
+	else if (s<=s_min-error_margin)
 	{
 		// std::cout<<"in\n";
-		return u + u*u/(2*s)*timestep;
+		float out = u - (u*u/(2*s))*timestep;
+		if(out<0)
+		{
+			std::cout<<"in2";
+			out = 0;
+		}
+		return out;
 		// return -1;
 	}
 	else if(u<u_max)//case 1 where the car isn't in maximum speed

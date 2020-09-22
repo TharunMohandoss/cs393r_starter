@@ -60,7 +60,7 @@ class Navigation {
                       float ang_vel);
 
   // Updates based on an observed laser scan
-  void ObservePointCloud(const std::vector<Eigen::Vector2f>& cloud,
+  void ObservePointCloud(const std::vector<Eigen::Vector2f> cloud,
                          double time);
 	float CalcPointFPL(const Vector2f obstacles, float radius, float &final_x, float &final_y,bool debug);
 	float CalculateScore(float fpl, float clearance, float goal_dist);
@@ -95,6 +95,9 @@ class Navigation {
   float nav_goal_angle_;
 	// Pointcloud of obstacles
 	vector<Vector2f> point_cloud_;
+
+  float prev_velocity = 0;
+  float cur_veclocity = 0;
 };
 
 }  // namespace navigation
