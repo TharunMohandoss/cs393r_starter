@@ -21,6 +21,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <math.h>
 #include <iostream>
 #include "eigen3/Eigen/Dense"
 #include "eigen3/Eigen/Geometry"
@@ -36,6 +37,9 @@
 
 #include "vector_map/vector_map.h"
 
+
+#include "amrl_msgs/AckermannCurvatureDriveMsg.h"
+
 using geometry::line2f;
 using std::cout;
 using std::endl;
@@ -46,7 +50,30 @@ using Eigen::Vector2f;
 using Eigen::Vector2i;
 using vector_map::VectorMap;
 
+// namespace {
+// ros::Publisher drive_pub_;
+// ros::Publisher viz_pub_;
+// VisualizationMsg local_viz_msg_;
+// VisualizationMsg global_viz_msg_;
+// AckermannCurvatureDriveMsg drive_msg_;
+// // Epsilon value for handling limited numerical precision.
+// const float kEpsilon = 1e-5;
+
+// const float car_width = 0.281;
+// const float car_length = 0.535;
+// const float car_height = 0.15;
+// const float wheel_base = 0.324;
+// const float clearance_length = 0.2;
+// const float clearance_width = 0.1;
+// } 
+
 DEFINE_double(num_particles, 50, "Number of particles");
+#define k1_x 1
+#define k2_x 1
+#define k1_y 1
+#define k2_y 1
+#define k3_theta 1
+#define k4_theta 1
 
 namespace particle_filter {
 
@@ -174,6 +201,31 @@ void ParticleFilter::Initialize(const string& map_file,
   // The "set_pose" button on the GUI was clicked, or an initialization message
   // was received from the log. Initialize the particles accordingly, e.g. with
   // some distribution around the provided location and angle.
+  // std::cout<<"map file  : "<<map_file<<"\n";
+  map_.Load("maps/GDC1.txt");
+
+  // visualization::ClearVisualizationMsg(local_viz_msg_);
+  robot_x = loc.x();
+  robot_y = loc.y();
+  robot_angle = angle;
+
+  for(unsigned int i=0; i<FLAGS_num_particles; i++) {
+      Particle particle;
+      Vector2f loc;
+      // replace 0
+      loc.x() = robot_x + rng_.Gaussian(0.0, k1_x * sqrt(1) + k2_x * abs(2) );
+      loc.y() = robot_y + rng_.Gaussian(0.0, k1_y * sqrt(3) + k2_y * abs(4) );
+
+      // visualization::DrawCross(loc,2, 0xFF0000, local_viz_msg_);
+
+      particle.loc = loc;
+      particle.angle = robot_angle + rng_.Gaussian(0, k3_theta * sqrt(5) + k4_theta * abs(6));
+      particle.weight = 1/FLAGS_num_particles;
+      particles_.push_back(particle);
+  }
+  // viz_pub_.publish(local_viz_msg_);
+
+
 }
 
 void ParticleFilter::GetLocation(Eigen::Vector2f* loc_ptr, 
