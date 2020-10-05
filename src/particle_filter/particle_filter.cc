@@ -74,6 +74,7 @@ DEFINE_double(num_particles, 50, "Number of particles");
 #define k2_y 1
 #define k3_theta 1
 #define k4_theta 1
+#define lidar_dist 0.2
 
 namespace particle_filter {
 
@@ -84,8 +85,9 @@ ParticleFilter::ParticleFilter() :
     prev_odom_angle_(0),
     odom_initialized_(false) {}
 
-void ParticleFilter::GetParticles(vector<Particle>* particles) const {
+void ParticleFilter::GetParticles(vector<Particle>* particles, vector<Vector2f>* our_obstacles) const {
   *particles = particles_;
+  *our_obstacles = our_obstacles_;
 }
 
 void ParticleFilter::GetPredictedPointCloud(const Vector2f& loc,
@@ -97,6 +99,10 @@ void ParticleFilter::GetPredictedPointCloud(const Vector2f& loc,
                                             float angle_max,
                                             vector<Vector2f>* scan_ptr) {
   vector<Vector2f>& scan = *scan_ptr;
+  float point_x, point_y, point_theta;
+  point_x = loc.x();
+  point_y = loc.y();
+  point_theta = angle;
   // Compute what the predicted point cloud would be, if the car was at the pose
   // loc, angle, with the sensor characteristics defined by the provided
   // parameters.
@@ -106,38 +112,72 @@ void ParticleFilter::GetPredictedPointCloud(const Vector2f& loc,
   // Note: The returned values must be set using the `scan` variable:
   scan.resize(num_ranges);
   // Fill in the entries of scan using array writes, e.g. scan[i] = ...
-  for (size_t i = 0; i < scan.size(); ++i) {
-    scan[i] = Vector2f(0, 0);
-  }
+  // for (size_t i = 0; i < scan.size(); ++i) {
+  //   scan[i] = Vector2f(0, 0);
+  // }
 
   // The line segments in the map are stored in the `map_.lines` variable. You
   // can iterate through them as:
-  for (size_t i = 0; i < map_.lines.size(); ++i) {
-    const line2f map_line = map_.lines[i];
-    // The line2f class has helper functions that will be useful.
-    // You can create a new line segment instance as follows, for :
-    line2f my_line(1, 2, 3, 4); // Line segment from (1,2) to (3.4).
-    // Access the end points using `.p0` and `.p1` members:
-    printf("P0: %f, %f P1: %f,%f\n", 
-           my_line.p0.x(),
-           my_line.p0.y(),
-           my_line.p1.x(),
-           my_line.p1.y());
+  float laser_x, laser_y;
+  laser_x = point_x + lidar_dist * cos(point_theta);
+  laser_y = point_y + lidar_dist * sin(point_theta);
+  Vector2f laser_vector(laser_x, laser_y);
 
-    // Check for intersections:
-    bool intersects = map_line.Intersects(my_line);
-    // You can also simultaneously check for intersection, and return the point
-    // of intersection:
-    Vector2f intersection_point; // Return variable
-    intersects = map_line.Intersection(my_line, &intersection_point);
-    if (intersects) {
-      printf("Intersects at %f,%f\n", 
-             intersection_point.x(),
-             intersection_point.y());
-    } else {
-      printf("No intersection\n");
+  for (size_t angle_i = 0; angle_i < scan.size(); ++angle_i) {
+
+    float angle_ls, final_x, final_y, final_distance; 
+    angle_ls = point_theta + angle_min + angle_i * (angle_max-angle_min)/num_ranges;
+    final_x = laser_x + range_max * cos(angle_ls);
+    final_y = laser_y + range_max * sin(angle_ls);
+    final_distance = range_max;
+
+    for (size_t map_i = 0; map_i < map_.lines.size(); ++map_i) {
+      const line2f map_line = map_.lines[map_i];
+      // The line2f class has helper functions that will be useful.
+      // You can create a new line segment instance as follows, for :
+      // line2f my_line(1, 2, 3, 4); // Line segment from (1,2) to (3.4).
+      // Access the end points using `.p0` and `.p1` members:
+      const line2f laser_line(laser_x, laser_y, final_x, final_y); 
+      // printf("P0: %f, %f P1: %f,%f\n", 
+      //        my_line.p0.x(),
+      //        my_line.p0.y(),
+      //        my_line.p1.x(),
+      //        my_line.p1.y());
+
+      // Check for intersections:
+      bool intersects = map_line.Intersects(laser_line);
+      // You can also simultaneously check for intersection, and return the point
+      // of intersection:
+      if(intersects) { 
+        std::cout<<"Intersected"<<"\n";
+        Vector2f intersection_point;
+        intersects = map_line.Intersection(laser_line, &intersection_point);
+        float distance_intersection;
+        distance_intersection = (laser_vector-intersection_point).norm();
+        if(distance_intersection<final_distance) {
+          final_distance = distance_intersection;
+          final_x = intersection_point.x();
+          final_y = intersection_point.y();
+          std::cout<<"Updated"<<"\n";
+        }
+      }
+      // if (intersects) {
+      //   printf("Intersects at %f,%f\n", 
+      //          intersection_point.x(),
+      //          intersection_point.y());
+      // } else {
+      //   printf("No intersection\n");
+      // }
     }
+    if(final_distance<range_min) {
+      final_x = laser_x + range_min * cos(angle_ls);
+      final_y = laser_y + range_min * sin(angle_ls);
+      final_distance = range_min;
+    }
+    Vector2f final_intersection(final_x, final_y);
+    scan[angle_i] = final_intersection;
   }
+  
 }
 
 void ParticleFilter::Update(const vector<float>& ranges,
@@ -166,9 +206,9 @@ void ParticleFilter::Resample() {
 
   // You will need to use the uniform random number generator provided. For
   // example, to generate a random number between 0 and 1:
-  float x = rng_.UniformRandom(0, 1);
-  printf("Random number drawn from uniform distribution between 0 and 1: %f\n",
-         x);
+  // float x = rng_.UniformRandom(0, 1);
+  // printf("Random number drawn from uniform distribution between 0 and 1: %f\n",
+  //        x);
 }
 
 void ParticleFilter::ObserveLaser(const vector<float>& ranges,
@@ -190,9 +230,9 @@ void ParticleFilter::ObserveOdometry(const Vector2f& odom_loc,
   // You will need to use the Gaussian random number generator provided. For
   // example, to generate a random number from a Gaussian with mean 0, and
   // standard deviation 2:
-  float x = rng_.Gaussian(0.0, 2.0);
-  printf("Random number drawn from Gaussian distribution with 0 mean and "
-         "standard deviation of 2 : %f\n", x);
+  // float x = rng_.Gaussian(0.0, 2.0);
+  // printf("Random number drawn from Gaussian distribution with 0 mean and "
+  //        "standard deviation of 2 : %f\n", x);
 }
 
 void ParticleFilter::Initialize(const string& map_file,
@@ -208,20 +248,27 @@ void ParticleFilter::Initialize(const string& map_file,
   robot_x = loc.x();
   robot_y = loc.y();
   robot_angle = angle;
+  // std::cout<<"robot_angle: "<<robot_angle<<"\n";
 
-  for(unsigned int i=0; i<FLAGS_num_particles; i++) {
+
+
+  // for(unsigned int i=0; i<FLAGS_num_particles; i++) {
+  for (unsigned int i=0; i<1; i++) {
       Particle particle;
-      Vector2f loc;
+      Vector2f predict_loc;
       // replace 0
-      loc.x() = robot_x + rng_.Gaussian(0.0, k1_x * sqrt(1) + k2_x * abs(2) );
-      loc.y() = robot_y + rng_.Gaussian(0.0, k1_y * sqrt(3) + k2_y * abs(4) );
+      predict_loc.x() = robot_x + rng_.Gaussian(0.0, k1_x * sqrt(1) + k2_x * abs(2) );
+      predict_loc.y() = robot_y + rng_.Gaussian(0.0, k1_y * sqrt(3) + k2_y * abs(4) );
 
       // visualization::DrawCross(loc,2, 0xFF0000, local_viz_msg_);
 
-      particle.loc = loc;
+      particle.loc = predict_loc;
       particle.angle = robot_angle + rng_.Gaussian(0, k3_theta * sqrt(5) + k4_theta * abs(6));
       particle.weight = 1/FLAGS_num_particles;
       particles_.push_back(particle);
+      // std::cout<<"pushed : "<<particles_.size()<<"\n";
+
+      // GetPredictedPointCloud(predict_loc, particle.angle, 1000, 100.0, 0.0, -3.14, 3.14, &our_obstacles_);
   }
   // viz_pub_.publish(local_viz_msg_);
 
