@@ -98,6 +98,7 @@ void ParticleFilter::GetPredictedPointCloud(const Vector2f& loc,
                                             float angle_min,
                                             float angle_max,
                                             vector<Vector2f>* scan_ptr) {
+ cout<<"in getpredpointcloud"<<endl;
   vector<Vector2f>& scan = *scan_ptr;
   float point_x, point_y, point_theta;
   point_x = loc.x();
@@ -110,11 +111,13 @@ void ParticleFilter::GetPredictedPointCloud(const Vector2f& loc,
   // expected observations, to be used for the update step.
 
   // Note: The returned values must be set using the `scan` variable:
+ cout<<"-1"<<endl;
   scan.resize(num_ranges);
   // Fill in the entries of scan using array writes, e.g. scan[i] = ...
   // for (size_t i = 0; i < scan.size(); ++i) {
   //   scan[i] = Vector2f(0, 0);
   // }
+  cout<<"0"<<endl;
 
   // The line segments in the map are stored in the `map_.lines` variable. You
   // can iterate through them as:
@@ -122,6 +125,8 @@ void ParticleFilter::GetPredictedPointCloud(const Vector2f& loc,
   laser_x = point_x + lidar_dist * cos(point_theta);
   laser_y = point_y + lidar_dist * sin(point_theta);
   Vector2f laser_vector(laser_x, laser_y);
+
+  cout<<"1"<<endl;
 
   for (size_t angle_i = 0; angle_i < scan.size(); ++angle_i) {
 
@@ -191,6 +196,19 @@ void ParticleFilter::Update(const vector<float>& ranges,
   // observations for each particle, and assign weights to the particles based
   // on the observation likelihood computed by relating the observation to the
   // predicted point cloud.
+   
+  vector<Vector2f> predcited_obstacles;
+   
+  cout<<"Here"<<endl;
+  //cout<<our_obstacles_.size()<<endl;
+
+  GetPredictedPointCloud(p_ptr->loc, p_ptr->angle, ranges.size(),
+                                            range_min,
+                                            range_max,
+                                            angle_min,
+                                            angle_max,
+                                            &predcited_obstacles);
+  cout<<"done"<<endl;
 }
 
 void ParticleFilter::Resample() {
@@ -218,6 +236,7 @@ void ParticleFilter::ObserveLaser(const vector<float>& ranges,
                                   float angle_max) {
   // A new laser scan observation is available (in the laser frame)
   // Call the Update and Resample steps as necessary.
+  Update(ranges, range_min, range_max, angle_min, angle_max, &particles_[0]);
 }
 
 void ParticleFilter::ObserveOdometry(const Vector2f& odom_loc,
