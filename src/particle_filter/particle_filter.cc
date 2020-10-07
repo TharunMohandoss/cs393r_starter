@@ -209,6 +209,31 @@ void ParticleFilter::Resample() {
   // float x = rng_.UniformRandom(0, 1);
   // printf("Random number drawn from uniform distribution between 0 and 1: %f\n",
   //        x);
+  vector<Particle> new_particles;
+  float total_weight = 0;
+  for(unsigned int i=0; i<FLAGS_num_particles; i++){
+    total_weight += particles_[i].weight;
+  }
+
+  for(unsigned int i=0; i<FLAGS_num_particles; i++){
+    float rand_num = rng_.UniformRandom(0, 1);
+    float running_sum = 0,j;
+    for(j=0; j<FLAGS_num_particles; j++) {
+      running_sum += particles_[j].weight/total_weight;
+      if(rand_num<running_sum) {
+        new_particles.push_back(particles_[j]);
+        new_particles[i].weight = 1/FLAGS_num_particles;
+        break;
+      }
+    }
+    if(j==FLAGS_num_particles)
+    {
+      new_particles.push_back(particles_[FLAGS_num_particles-1]);
+      new_particles[i].weight = 1/FLAGS_num_particles;
+    }
+  }
+  particles_ = new_particles;
+
 }
 
 void ParticleFilter::ObserveLaser(const vector<float>& ranges,
@@ -218,6 +243,13 @@ void ParticleFilter::ObserveLaser(const vector<float>& ranges,
                                   float angle_max) {
   // A new laser scan observation is available (in the laser frame)
   // Call the Update and Resample steps as necessary.
+
+  // piazza post: check it
+  if(particles_.size()!=0) {
+    Update(ranges, range_min, range_max, angle_min, angle_max, &particles_[0]);
+    Resample();
+  }
+  
 }
 
 void ParticleFilter::ObserveOdometry(const Vector2f& odom_loc,
@@ -233,6 +265,20 @@ void ParticleFilter::ObserveOdometry(const Vector2f& odom_loc,
   // float x = rng_.Gaussian(0.0, 2.0);
   // printf("Random number drawn from Gaussian distribution with 0 mean and "
   //        "standard deviation of 2 : %f\n", x);
+
+  // try tharun's idea  
+  // if(!odom_initialized_) {
+  //   prev_odom_loc_ = odom_loc;
+  //   prev_odom_angle_ = odom_angle;
+  //   odom_initialized_ = true;
+  //   return;
+  // }
+  // else
+  // {
+  //   float dx, dy, dtheta;
+  // }
+
+  
 }
 
 void ParticleFilter::Initialize(const string& map_file,
@@ -248,12 +294,13 @@ void ParticleFilter::Initialize(const string& map_file,
   robot_x = loc.x();
   robot_y = loc.y();
   robot_angle = angle;
+
+  odom_initialized_ = false;
   // std::cout<<"robot_angle: "<<robot_angle<<"\n";
 
 
 
-  // for(unsigned int i=0; i<FLAGS_num_particles; i++) {
-  for (unsigned int i=0; i<1; i++) {
+  for(unsigned int i=0; i<FLAGS_num_particles; i++) {
       Particle particle;
       Vector2f predict_loc;
       // replace 0
@@ -266,9 +313,7 @@ void ParticleFilter::Initialize(const string& map_file,
       particle.angle = robot_angle + rng_.Gaussian(0, k3_theta * sqrt(5) + k4_theta * abs(6));
       particle.weight = 1/FLAGS_num_particles;
       particles_.push_back(particle);
-      // std::cout<<"pushed : "<<particles_.size()<<"\n";
 
-      // GetPredictedPointCloud(predict_loc, particle.angle, 1000, 100.0, 0.0, -3.14, 3.14, &our_obstacles_);
   }
   // viz_pub_.publish(local_viz_msg_);
 
@@ -282,8 +327,22 @@ void ParticleFilter::GetLocation(Eigen::Vector2f* loc_ptr,
   // Compute the best estimate of the robot's location based on the current set
   // of particles. The computed values must be set to the `loc` and `angle`
   // variables to return them. Modify the following assignments:
-  loc = Vector2f(0, 0);
-  angle = 0;
+  float mean_loc_x, mean_loc_y, mean_angle, weight_sum;
+  mean_loc_x = 0;
+  mean_loc_y = 0;
+  mean_angle = 0;
+  weight_sum = 0;
+  for(unsigned int i=0; i<FLAGS_num_particles; i++) {
+    float weight_i = particles_[i].weight;
+    mean_loc_x += weight_i*particles_[i].loc.x();
+    mean_loc_y += weight_i*particles_[i].loc.y();
+    mean_angle += weight_i*particles_[i].angle;
+    weight_sum += weight_i;
+  }
+
+
+  loc = Vector2f(mean_loc_x/weight_sum, mean_loc_y/weight_sum);
+  angle = mean_angle/weight_sum;
 }
 
 
