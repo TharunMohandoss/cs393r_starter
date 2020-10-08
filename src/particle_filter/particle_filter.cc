@@ -270,12 +270,12 @@ void ParticleFilter::ObserveLaser(const vector<float>& ranges,
   
   
   
-  //appending dummy points to particles_ for testing
+  //appending dummy points to particles_ for testing (COMMENT THIS BLOCK IF NOT TESTING)
   Particle p1 = {Vector2f(0, 0), 0, 0};
   Particle p2 = {Vector2f(1, 1), 2.0, 0};
   particles_.push_back(p1);
   particles_.push_back(p2);
-  cout<<particles_.size()<<endl;
+  //cout<<particles_.size()<<endl;
 
 
    float total_weight = 0.0;
