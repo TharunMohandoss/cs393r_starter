@@ -191,6 +191,44 @@ void ParticleFilter::Update(const vector<float>& ranges,
   // observations for each particle, and assign weights to the particles based
   // on the observation likelihood computed by relating the observation to the
   // predicted point cloud.
+  
+  vector<Vector2f> scan_ptr;
+  GetPredictedPointCloud(p_ptr->loc, p_ptr->angle, ranges.size(),
+                                            range_min,
+                                            range_max,
+                                            angle_min,
+                                            angle_max,
+                                            &scan_ptr);
+
+
+  //computing distance from obstacle
+  vector<float> point_distances;
+  for(unsigned int i = 0; i< ranges.size(); ++i)
+  {
+
+   //the obstacle position
+   float obst_x = scan_ptr[i].x();
+   float obst_y = scan_ptr[i].y();
+
+   float loc_x = p_ptr->loc.x();
+   float loc_y = p_ptr->loc.y();
+
+   float distance = sqrt(pow((obst_x - loc_x), 2) +  pow((obst_y - loc_y), 2));
+   //cout<<distance<<endl;
+   point_distances.push_back(distance);
+  }
+
+  //computing the L2 distance between point distances and scan_ptr
+  float l2_distance_square = 0.0;
+  for(unsigned int i = 0; i< ranges.size(); ++i)
+  {
+   l2_distance_square += pow(point_distances[i] - ranges[i], 2);
+  }
+
+
+  //computing weight
+  float weight = exp(-l2_distance_square/(2 * sigma));
+  p_ptr->weight = weight;
 }
 
 void ParticleFilter::Resample() {
