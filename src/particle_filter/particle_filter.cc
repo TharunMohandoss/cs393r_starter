@@ -75,6 +75,7 @@ DEFINE_double(num_particles, 50, "Number of particles");
 #define k3_theta 1
 #define k4_theta 1
 #define lidar_dist 0.2
+#define sigma 1000.0
 
 namespace particle_filter {
 
@@ -111,13 +112,13 @@ void ParticleFilter::GetPredictedPointCloud(const Vector2f& loc,
   // expected observations, to be used for the update step.
 
   // Note: The returned values must be set using the `scan` variable:
- cout<<"-1"<<endl;
+ //cout<<"-1"<<endl;
   scan.resize(num_ranges);
   // Fill in the entries of scan using array writes, e.g. scan[i] = ...
   // for (size_t i = 0; i < scan.size(); ++i) {
   //   scan[i] = Vector2f(0, 0);
   // }
-  cout<<"0"<<endl;
+  //cout<<"0"<<endl;
 
   // The line segments in the map are stored in the `map_.lines` variable. You
   // can iterate through them as:
@@ -126,7 +127,7 @@ void ParticleFilter::GetPredictedPointCloud(const Vector2f& loc,
   laser_y = point_y + lidar_dist * sin(point_theta);
   Vector2f laser_vector(laser_x, laser_y);
 
-  cout<<"1"<<endl;
+  //cout<<"1"<<endl;
 
   for (size_t angle_i = 0; angle_i < scan.size(); ++angle_i) {
 
@@ -197,18 +198,47 @@ void ParticleFilter::Update(const vector<float>& ranges,
   // on the observation likelihood computed by relating the observation to the
   // predicted point cloud.
    
-  vector<Vector2f> predcited_obstacles;
-   
-  cout<<"Here"<<endl;
-  //cout<<our_obstacles_.size()<<endl;
+  vector<Vector2f> scan_ptr;
 
   GetPredictedPointCloud(p_ptr->loc, p_ptr->angle, ranges.size(),
                                             range_min,
                                             range_max,
                                             angle_min,
                                             angle_max,
-                                            &predcited_obstacles);
-  cout<<"done"<<endl;
+                                            &scan_ptr);
+
+
+  //computing distance from obstacle
+  vector<float> point_distances;
+  for(unsigned int i = 0; i< ranges.size(); ++i)
+  {
+
+   //the obstacle position
+   float obst_x = scan_ptr[i].x();
+   float obst_y = scan_ptr[i].y();
+
+   float loc_x = p_ptr->loc.x();
+   float loc_y = p_ptr->loc.y();
+
+   float distance = sqrt(pow((obst_x - loc_x), 2) +  pow((obst_y - loc_y), 2));
+   //cout<<distance<<endl;
+   point_distances.push_back(distance);
+  }
+
+  //computing the L2 distance between point distances and scan_ptr
+  float l2_distance_square = 0.0;
+  for(unsigned int i = 0; i< ranges.size(); ++i)
+  {
+   l2_distance_square += pow(point_distances[i] - ranges[i], 2);
+  }
+
+
+  //computing weight
+  
+  float weight = exp(-l2_distance_square/(2 * sigma));
+
+  p_ptr->weight = weight;
+
 }
 
 void ParticleFilter::Resample() {
@@ -236,7 +266,32 @@ void ParticleFilter::ObserveLaser(const vector<float>& ranges,
                                   float angle_max) {
   // A new laser scan observation is available (in the laser frame)
   // Call the Update and Resample steps as necessary.
-  Update(ranges, range_min, range_max, angle_min, angle_max, &particles_[0]);
+  
+  
+  
+  
+  //appending dummy points to particles_ for testing
+  Particle p1 = {Vector2f(0, 0), 0, 0};
+  Particle p2 = {Vector2f(1, 1), 2.0, 0};
+  particles_.push_back(p1);
+  particles_.push_back(p2);
+  cout<<particles_.size()<<endl;
+
+
+   float total_weight = 0.0;
+   for(unsigned int i=0; i<particles_.size();++i)
+   {
+   Update(ranges, range_min, range_max, angle_min, angle_max, &particles_[i]);
+   total_weight += (&particles_[i])->weight; //calculating sum of updated weights
+   }
+
+  //normalizing weights
+   for(unsigned int i=0; i<particles_.size();++i)
+   (&particles_[i])->weight /= total_weight;
+
+  //for(unsigned int i=0; i<particles_.size();++i)
+  // cout<<(&particles_[i])->weight<<endl;
+ 
 }
 
 void ParticleFilter::ObserveOdometry(const Vector2f& odom_loc,
