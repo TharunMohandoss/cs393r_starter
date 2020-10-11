@@ -346,21 +346,10 @@ vector<float> Navigation::SelectCurvature(vector<Vector2f> obstacles){
 }
 
 void Navigation::Run() {
-	// visualization::ClearVisualizationMsg(local_viz_msg_);
-	// viz_pub_.publish(local_viz_msg_);
-	// visualization::ClearVisualizationMsg(local_viz_msg_);
+
 	vector<float> ret_vals = SelectCurvature(point_cloud_);
 	nav_goal_loc_ = Vector2f(10,0);
-	// visualization::DrawCross(nav_goal_loc_,2, 0xFF0000, local_viz_msg_);
-	// visualization::DrawCross(Vector2f(2.92,0),2, 0xFF0000, local_viz_msg_);
-	// visualization::DrawCross(Vector2f(1.7957, 4.23938),2, 0xFF0000, local_viz_msg_);
-	// visualization::DrawCross(Vector2f(3.27161, -1.21892),2, 0xFF0000, local_viz_msg_);
-	// viz_pub_.publish(local_viz_msg_);
-	// std::cout<<"FPL: "<<ret_vals[0]<<", Curvature: "<<ret_vals[1]<<"\n";
-	// float u = sqrt(pow(robot_vel_.x(), 2) + pow(robot_vel_.y(), 2));
-	// std::cout<<"robot_vel_.x() : "<<robot_vel_.x()<<", robot_vel_.y() : "<<robot_vel_.y()<<"\n";
 	float v = OneDTOC(prev_velocity, 1, 4, -4, ret_vals[0]);
-	// std::cout<<"u : "<<prev_velocity<<", v : "<<v<<"\n";
 	prev_velocity = v;
 
 	drive_msg_.velocity = v;

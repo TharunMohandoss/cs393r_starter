@@ -68,13 +68,14 @@ using vector_map::VectorMap;
 // } 
 
 DEFINE_double(num_particles, 50, "Number of particles");
-#define k1_x 1
-#define k2_x 1
-#define k1_y 1
-#define k2_y 1
-#define k3_theta 1
-#define k4_theta 1
+#define k1_x 0.1
+#define k2_x 0.1
+#define k1_y 0.1
+#define k2_y 0.1
+#define k3_theta 0.05
+#define k4_theta 0.05
 #define lidar_dist 0.2
+#define sigma 1000.0
 
 namespace particle_filter {
 
@@ -85,9 +86,9 @@ ParticleFilter::ParticleFilter() :
     prev_odom_angle_(0),
     odom_initialized_(false) {}
 
-void ParticleFilter::GetParticles(vector<Particle>* particles, vector<Vector2f>* our_obstacles) const {
+void ParticleFilter::GetParticles(vector<Particle>* particles) const {
   *particles = particles_;
-  *our_obstacles = our_obstacles_;
+  // *our_obstacles = our_obstacles_;
 }
 
 void ParticleFilter::GetPredictedPointCloud(const Vector2f& loc,
@@ -149,7 +150,7 @@ void ParticleFilter::GetPredictedPointCloud(const Vector2f& loc,
       // You can also simultaneously check for intersection, and return the point
       // of intersection:
       if(intersects) { 
-        std::cout<<"Intersected"<<"\n";
+        // std::cout<<"Intersected"<<"\n";
         Vector2f intersection_point;
         intersects = map_line.Intersection(laser_line, &intersection_point);
         float distance_intersection;
@@ -158,7 +159,7 @@ void ParticleFilter::GetPredictedPointCloud(const Vector2f& loc,
           final_distance = distance_intersection;
           final_x = intersection_point.x();
           final_y = intersection_point.y();
-          std::cout<<"Updated"<<"\n";
+          // std::cout<<"Updated"<<"\n";
         }
       }
       // if (intersects) {
@@ -185,50 +186,70 @@ void ParticleFilter::Update(const vector<float>& ranges,
                             float range_max,
                             float angle_min,
                             float angle_max,
-                            Particle* p_ptr) {
+                            Particle* p_ptr_arr) {
   // Implement the update step of the particle filter here.
   // You will have to use the `GetPredictedPointCloud` to predict the expected
   // observations for each particle, and assign weights to the particles based
   // on the observation likelihood computed by relating the observation to the
   // predicted point cloud.
-  
-  vector<Vector2f> scan_ptr;
-  GetPredictedPointCloud(p_ptr->loc, p_ptr->angle, ranges.size(),
-                                            range_min,
-                                            range_max,
-                                            angle_min,
-                                            angle_max,
-                                            &scan_ptr);
+  // Particle dummy[4];
+  // dummy[0].loc = Vector2f(0,0);
+  // dummy[0].angle = 0;
+  // dummy[1].loc = Vector2f(-1,0);
+  // dummy[1].angle = 0;
+  // dummy[2].loc = Vector2f(0,0);
+  // dummy[2].angle = 0;
+  // dummy[3].loc = Vector2f(0,0);
+  // dummy[3].angle = 0.1;
+  // unsigned int number_of_elements = 4;
 
-
-  //computing distance from obstacle
-  vector<float> point_distances;
-  for(unsigned int i = 0; i< ranges.size(); ++i)
+  for(unsigned int i=0;i<FLAGS_num_particles;i++)
   {
-
-   //the obstacle position
-   float obst_x = scan_ptr[i].x();
-   float obst_y = scan_ptr[i].y();
-
-   float loc_x = p_ptr->loc.x();
-   float loc_y = p_ptr->loc.y();
-
-   float distance = sqrt(pow((obst_x - loc_x), 2) +  pow((obst_y - loc_y), 2));
-   //cout<<distance<<endl;
-   point_distances.push_back(distance);
-  }
-
-  //computing the L2 distance between point distances and scan_ptr
-  float l2_distance_square = 0.0;
-  for(unsigned int i = 0; i< ranges.size(); ++i)
-  {
-   l2_distance_square += pow(point_distances[i] - ranges[i], 2);
-  }
+    vector<Vector2f> scan_ptr;
+    Particle* p_ptr = &p_ptr_arr[i];
+    // p_ptr = &dummy[i];//todo
+    GetPredictedPointCloud(p_ptr->loc, p_ptr->angle, ranges.size(),
+                                              range_min,
+                                              range_max,
+                                              angle_min,
+                                              angle_max,
+                                              &scan_ptr);
 
 
-  //computing weight
-  float weight = exp(-l2_distance_square/(2 * sigma));
-  p_ptr->weight = weight;
+    //computing distance from obstacle
+    vector<float> point_distances;
+    for(unsigned int j = 0; j< ranges.size(); ++j)
+    {
+
+     //the obstacle position
+     float obst_x = scan_ptr[j].x();
+     float obst_y = scan_ptr[j].y();
+
+     float loc_x = p_ptr->loc.x();
+     float loc_y = p_ptr->loc.y();
+
+     float distance = sqrt(pow((obst_x - loc_x), 2) +  pow((obst_y - loc_y), 2));
+     //cout<<distance<<endl;
+     point_distances.push_back(distance);
+    }
+
+    //computing the L2 distance between point distances and scan_ptr
+    float l2_distance_square = 0.0;
+    for(unsigned int j = 0; j< ranges.size(); ++j)
+    {
+     l2_distance_square += pow(point_distances[j] - ranges[j], 2);
+    }
+
+
+    //computing weight
+    float weight = exp(-l2_distance_square/(2 * sigma));
+    p_ptr->weight = weight;
+  }  
+  // for(unsigned int i=0;i<number_of_elements;i++)
+  // {
+  //   std::cout<<"i : "<<i<<", "<<dummy[i].weight<<"\n";
+  // }
+
 }
 
 void ParticleFilter::Resample() {
@@ -283,6 +304,9 @@ void ParticleFilter::ObserveLaser(const vector<float>& ranges,
   // Call the Update and Resample steps as necessary.
 
   // piazza post: check it
+  // std::cout<<"inside2 : "<<"\n";
+  // std::cout<<particles_.size()<<"\n";
+  // std::cout<<"inside3 : "<<"\n";
   if(particles_.size()!=0) {
     Update(ranges, range_min, range_max, angle_min, angle_max, &particles_[0]);
     Resample();
@@ -305,16 +329,41 @@ void ParticleFilter::ObserveOdometry(const Vector2f& odom_loc,
   //        "standard deviation of 2 : %f\n", x);
 
   // try tharun's idea  
-  // if(!odom_initialized_) {
-  //   prev_odom_loc_ = odom_loc;
-  //   prev_odom_angle_ = odom_angle;
-  //   odom_initialized_ = true;
-  //   return;
-  // }
-  // else
-  // {
-  //   float dx, dy, dtheta;
-  // }
+  
+  // std::cout<<"x : "<<odom_loc.x()<<"\n";
+  // std::cout<<"y : "<<odom_loc.y()<<"\n";
+  std::cout<<"odom_angle : "<<odom_angle<<"\n";
+  if(!odom_initialized_) {
+    prev_odom_loc_ = odom_loc;
+    prev_odom_angle_ = odom_angle;
+    odom_initialized_ = true;
+    return;
+  }
+  else
+  {
+    float dx, dy, dtheta,abs_dtheta;
+    dx = odom_loc.x() - prev_odom_loc_.x();
+    dy = odom_loc.y() - prev_odom_loc_.y();
+    dtheta = odom_angle - prev_odom_angle_;
+
+    abs_dtheta = std::min(abs(dtheta), float(2*M_PI)-abs(dtheta));
+
+    for(unsigned int i=0; i<particles_.size(); i++) {
+      float ds, random_x, random_y, random_theta;
+      ds = sqrt(dx*dx + dy*dy);
+      random_x = rng_.Gaussian(0.0, k1_x * ds + k2_x * abs_dtheta);
+      random_y = rng_.Gaussian(0.0, k1_y * ds + k2_y * abs_dtheta);
+      random_theta = rng_.Gaussian(0, k3_theta * ds + k4_theta * abs_dtheta);
+      particles_[i].loc.x() = particles_[i].loc.x() + dx + random_x;
+      particles_[i].loc.y() = particles_[i].loc.y() + dy + random_y;
+      particles_[i].angle = particles_[i].angle + dtheta + random_theta;
+      // std::cout<<"Update "<<"\n";
+    }
+    prev_odom_loc_.x() = odom_loc.x();
+    prev_odom_loc_.y() = odom_loc.y();
+    prev_odom_angle_ = odom_angle;
+    
+  }
 
   
 }
@@ -337,18 +386,18 @@ void ParticleFilter::Initialize(const string& map_file,
   // std::cout<<"robot_angle: "<<robot_angle<<"\n";
 
 
-
+  particles_.clear();
   for(unsigned int i=0; i<FLAGS_num_particles; i++) {
       Particle particle;
       Vector2f predict_loc;
       // replace 0
-      predict_loc.x() = robot_x + rng_.Gaussian(0.0, k1_x * sqrt(1) + k2_x * abs(2) );
-      predict_loc.y() = robot_y + rng_.Gaussian(0.0, k1_y * sqrt(3) + k2_y * abs(4) );
+      predict_loc.x() = robot_x + rng_.Gaussian(0.0, 0.1);
+      predict_loc.y() = robot_y + rng_.Gaussian(0.0, 0.1);
 
       // visualization::DrawCross(loc,2, 0xFF0000, local_viz_msg_);
 
       particle.loc = predict_loc;
-      particle.angle = robot_angle + rng_.Gaussian(0, k3_theta * sqrt(5) + k4_theta * abs(6));
+      particle.angle = robot_angle + rng_.Gaussian(0, 0.1);
       particle.weight = 1/FLAGS_num_particles;
       particles_.push_back(particle);
 
@@ -360,27 +409,29 @@ void ParticleFilter::Initialize(const string& map_file,
 
 void ParticleFilter::GetLocation(Eigen::Vector2f* loc_ptr, 
                                  float* angle_ptr) const {
-  Vector2f& loc = *loc_ptr;
-  float& angle = *angle_ptr;
-  // Compute the best estimate of the robot's location based on the current set
-  // of particles. The computed values must be set to the `loc` and `angle`
-  // variables to return them. Modify the following assignments:
-  float mean_loc_x, mean_loc_y, mean_angle, weight_sum;
-  mean_loc_x = 0;
-  mean_loc_y = 0;
-  mean_angle = 0;
-  weight_sum = 0;
-  for(unsigned int i=0; i<FLAGS_num_particles; i++) {
-    float weight_i = particles_[i].weight;
-    mean_loc_x += weight_i*particles_[i].loc.x();
-    mean_loc_y += weight_i*particles_[i].loc.y();
-    mean_angle += weight_i*particles_[i].angle;
-    weight_sum += weight_i;
+  if(particles_.size()!=0) {
+    Vector2f& loc = *loc_ptr;
+    float& angle = *angle_ptr;
+    // Compute the best estimate of the robot's location based on the current set
+    // of particles. The computed values must be set to the `loc` and `angle`
+    // variables to return them. Modify the following assignments:
+    float mean_loc_x, mean_loc_y, mean_angle, weight_sum;
+    mean_loc_x = 0;
+    mean_loc_y = 0;
+    mean_angle = 0;
+    weight_sum = 0;
+    for(unsigned int i=0; i<FLAGS_num_particles; i++) {
+      float weight_i = particles_[i].weight;
+      mean_loc_x += weight_i*particles_[i].loc.x();
+      mean_loc_y += weight_i*particles_[i].loc.y();
+      mean_angle += weight_i*particles_[i].angle;
+      weight_sum += weight_i;
+    }
+
+
+    loc = Vector2f(mean_loc_x/weight_sum, mean_loc_y/weight_sum);
+    angle = mean_angle/weight_sum;
   }
-
-
-  loc = Vector2f(mean_loc_x/weight_sum, mean_loc_y/weight_sum);
-  angle = mean_angle/weight_sum;
 }
 
 

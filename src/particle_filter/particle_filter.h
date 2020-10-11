@@ -61,7 +61,7 @@ class ParticleFilter {
                   const float angle);
 
   // Return the list of particles.
-  void GetParticles(std::vector<Particle>* particles,std::vector<Eigen::Vector2f>* obstacles) const;
+  void GetParticles(std::vector<Particle>* particles) const;
 
   // Get robot's current location.
   void GetLocation(Eigen::Vector2f* loc, float* angle) const;

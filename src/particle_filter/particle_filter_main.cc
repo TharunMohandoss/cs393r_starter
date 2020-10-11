@@ -102,29 +102,18 @@ void InitializeMsgs() {
 }
 
 void PublishParticles() {
-  // const uint32_t kColor = 0x008000;
   vector<particle_filter::Particle> particles;
-  vector<Vector2f> our_obstacles;
-  particle_filter_.GetParticles(&particles, &our_obstacles);
+  particle_filter_.GetParticles(&particles);
   for (const particle_filter::Particle& p : particles) {
-    // std::cout<<"inside1\n";
     DrawParticle(p.loc, p.angle, vis_msg_);
   }
-  // std::cout<<"len : "<<our_obstacles.size()<<"\n";
-  // for (const Vector2f p : our_obstacles)
-  // {
-  //   std::cout<<"inside : "<<p.x()<<","<<p.y()<<"\n";
-  //   DrawPoint(p, kColor, vis_msg_);
-  //   // visualization::DrawCross(p,2, 0x008000, vis_msg_);
-  // }
 }
 
 void PublishPredictedScan() {
-  const uint32_t kColor = 0x008000;
-  Vector2f robot_loc(0.5, 10);
+  const uint32_t kColor = 0xd67d00;
+  Vector2f robot_loc(0, 0);
   float robot_angle(0);
-  DrawParticle(robot_loc, robot_angle, vis_msg_);
-  // particle_filter_.GetLocation(&robot_loc, &robot_angle);
+  particle_filter_.GetLocation(&robot_loc, &robot_angle);
   vector<Vector2f> predicted_scan;
   particle_filter_.GetPredictedPointCloud(
       robot_loc,
@@ -135,33 +124,32 @@ void PublishPredictedScan() {
       last_laser_msg_.angle_min,
       last_laser_msg_.angle_max,
       &predicted_scan);
-  std::cout<<"range_min : "<<last_laser_msg_.range_min<<"\n";
   for (const Vector2f& p : predicted_scan) {
     DrawPoint(p, kColor, vis_msg_);
   }
 }
 
 void PublishTrajectory() {
-  // const uint32_t kColor = 0xadadad;
-  // Vector2f robot_loc(0, 0);
-  // float robot_angle(0);
-  // particle_filter_.GetLocation(&robot_loc, &robot_angle);
-  // static Vector2f last_loc_(0, 0);
-  // if (!trajectory_points_.empty() &&
-  //     (last_loc_ - robot_loc).squaredNorm() > Sq(1.5)) {
-  //   trajectory_points_.clear();
-  // }
-  // if (trajectory_points_.empty() ||
-  //     (robot_loc - last_loc_).squaredNorm() > 0.25) {
-  //   trajectory_points_.push_back(robot_loc);
-  //   last_loc_ = robot_loc;
-  // }
-  // for (size_t i = 0; i + 1 < trajectory_points_.size(); ++i) {
-  //   DrawLine(trajectory_points_[i],
-  //            trajectory_points_[i + 1],
-  //            kColor,
-  //            vis_msg_);
-  // }
+  const uint32_t kColor = 0xadadad;
+  Vector2f robot_loc(0, 0);
+  float robot_angle(0);
+  particle_filter_.GetLocation(&robot_loc, &robot_angle);
+  static Vector2f last_loc_(0, 0);
+  if (!trajectory_points_.empty() &&
+      (last_loc_ - robot_loc).squaredNorm() > Sq(1.5)) {
+    trajectory_points_.clear();
+  }
+  if (trajectory_points_.empty() ||
+      (robot_loc - last_loc_).squaredNorm() > 0.25) {
+    trajectory_points_.push_back(robot_loc);
+    last_loc_ = robot_loc;
+  }
+  for (size_t i = 0; i + 1 < trajectory_points_.size(); ++i) {
+    DrawLine(trajectory_points_[i],
+             trajectory_points_[i + 1],
+             kColor,
+             vis_msg_);
+  }
 }
 
 void PublishVisualization() {
