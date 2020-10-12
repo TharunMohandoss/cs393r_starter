@@ -68,14 +68,14 @@ using vector_map::VectorMap;
 // } 
 
 DEFINE_double(num_particles, 50, "Number of particles");
-#define k1_x 0.1
-#define k2_x 0.1
-#define k1_y 0.1
-#define k2_y 0.1
+#define k1_x 0.2
+#define k2_x 0.2
+#define k1_y 0.05
+#define k2_y 0.05
 #define k3_theta 0.05
 #define k4_theta 0.05
 #define lidar_dist 0.2
-#define sigma 1000.0
+#define sigma 3000.0
 
 namespace particle_filter {
 
@@ -346,6 +346,17 @@ void ParticleFilter::ObserveOdometry(const Vector2f& odom_loc,
     dy = odom_loc.y() - prev_odom_loc_.y();
     dtheta = odom_angle - prev_odom_angle_;
 
+    float angle_estimate;
+    Vector2f location_estimate;
+    GetLocation(&location_estimate,&angle_estimate);
+
+    // Vector2f loc_base;
+    Vector2f loc_base = Eigen::Rotation2Df(-prev_odom_angle_)*Vector2f(dx,dy);
+
+    // loc_base = 
+
+
+
     abs_dtheta = std::min(abs(dtheta), float(2*M_PI)-abs(dtheta));
 
     for(unsigned int i=0; i<particles_.size(); i++) {
@@ -353,9 +364,11 @@ void ParticleFilter::ObserveOdometry(const Vector2f& odom_loc,
       ds = sqrt(dx*dx + dy*dy);
       random_x = rng_.Gaussian(0.0, k1_x * ds + k2_x * abs_dtheta);
       random_y = rng_.Gaussian(0.0, k1_y * ds + k2_y * abs_dtheta);
+      Vector2f change_vec(random_x+loc_base.x(),random_y + loc_base.y());
+      Vector2f rotated_map = Eigen::Rotation2Df(angle_estimate)*change_vec;
       random_theta = rng_.Gaussian(0, k3_theta * ds + k4_theta * abs_dtheta);
-      particles_[i].loc.x() = particles_[i].loc.x() + dx + random_x;
-      particles_[i].loc.y() = particles_[i].loc.y() + dy + random_y;
+      particles_[i].loc.x() = particles_[i].loc.x() + rotated_map.x();
+      particles_[i].loc.y() = particles_[i].loc.y() + rotated_map.y();
       particles_[i].angle = particles_[i].angle + dtheta + random_theta;
       // std::cout<<"Update "<<"\n";
     }
