@@ -76,6 +76,10 @@ DEFINE_double(num_particles, 50, "Number of particles");
 #define k4_theta 1
 #define lidar_dist 0.2
 #define sigma 1000.0
+#define d_long 0.5
+#define d_short 0.5
+#define s_min 0.2
+#define s_max 3.0
 
 namespace particle_filter {
 
@@ -227,11 +231,23 @@ void ParticleFilter::Update(const vector<float>& ranges,
 
   //computing the L2 distance between point distances and scan_ptr
   float l2_distance_square = 0.0;
-  for(unsigned int i = 0; i< ranges.size(); ++i)
-  {
-   l2_distance_square += pow(point_distances[i] - ranges[i], 2);
-  }
+  for(unsigned int j = 0; j< ranges.size(); ++j)
+    {
+      float w;
 
+      //robust optimal likelihood
+      if(ranges[j] < s_min || ranges[j] > s_max)
+        w = 0;
+      else if (ranges[j] < point_distances[j] - d_short)
+       w = pow(d_short, 2);
+      else if (ranges[j] > point_distances[j] + d_long)
+       w = pow(d_long, 2);
+      else
+      w = pow(point_distances[j] - ranges[j], 2);
+
+     l2_distance_square += w;
+     
+    }
 
   //computing weight
   
@@ -289,8 +305,9 @@ void ParticleFilter::ObserveLaser(const vector<float>& ranges,
    for(unsigned int i=0; i<particles_.size();++i)
    (&particles_[i])->weight /= total_weight;
 
-  //for(unsigned int i=0; i<particles_.size();++i)
-  // cout<<(&particles_[i])->weight<<endl;
+  for(unsigned int i=0; i<particles_.size();++i)
+  cout<<(&particles_[i])->weight<<endl;
+  exit(0);
  
 }
 
