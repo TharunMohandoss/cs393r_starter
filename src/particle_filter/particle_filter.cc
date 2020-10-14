@@ -287,10 +287,10 @@ void ParticleFilter::ObserveLaser(const vector<float>& ranges,
   
   
   //appending dummy points to particles_ for testing (COMMENT THIS BLOCK IF NOT TESTING)
-  Particle p1 = {Vector2f(0, 0), 0, 0};
-  Particle p2 = {Vector2f(1, 1), 2.0, 0};
-  particles_.push_back(p1);
-  particles_.push_back(p2);
+  //Particle p1 = {Vector2f(0, 0), 0, 0};
+  //Particle p2 = {Vector2f(10, 10), 2.0, 0};
+  //particles_.push_back(p1);
+ // particles_.push_back(p2);
   //cout<<particles_.size()<<endl;
 
 
@@ -305,9 +305,9 @@ void ParticleFilter::ObserveLaser(const vector<float>& ranges,
    for(unsigned int i=0; i<particles_.size();++i)
    (&particles_[i])->weight /= total_weight;
 
-  for(unsigned int i=0; i<particles_.size();++i)
-  cout<<(&particles_[i])->weight<<endl;
-  exit(0);
+  //for(unsigned int i=0; i<particles_.size();++i)
+ // cout<<(&particles_[i])->weight<<endl;
+ // exit(0);
  
 }
 
