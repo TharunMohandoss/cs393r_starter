@@ -70,10 +70,10 @@ using vector_map::VectorMap;
 DEFINE_double(num_particles, 50, "Number of particles");
 #define k1_x 0.2
 #define k2_x 0.2
-#define k1_y 0.05
-#define k2_y 0.05
-#define k3_theta 0.05
-#define k4_theta 0.05
+#define k1_y 0.1
+#define k2_y 0.1
+#define k3_theta 0.15
+#define k4_theta 0.15
 #define lidar_dist 0.2
 #define sigma 3000.0
 
@@ -244,10 +244,36 @@ void ParticleFilter::Update(const vector<float>& ranges,
     //computing weight
     float weight = exp(-l2_distance_square/(2 * sigma));
     p_ptr->weight = weight;
-  }  
-  // for(unsigned int i=0;i<number_of_elements;i++)
+  } 
+  // float sumval = 0;
+  // for(unsigned int i=0;i<FLAGS_num_particles;i++)
   // {
-  //   std::cout<<"i : "<<i<<", "<<dummy[i].weight<<"\n";
+  //   sumval += p_ptr_arr[i].weight;
+  // } 
+  // for(unsigned int i=0;i<FLAGS_num_particles;i++)
+  // {
+  //   p_ptr_arr[i].weight/=sumval;
+  // } 
+  // float meanval = 1/FLAGS_num_particles,stddev=0;
+  // for(unsigned int i=0;i<FLAGS_num_particles;i++)
+  // {
+  //   stddev = (p_ptr_arr[i].weight-meanval)*(p_ptr_arr[i].weight-meanval);
+  // } 
+  // stddev/=FLAGS_num_particles;
+  // stddev = sqrt(stddev);
+  // std::cout<<"stddev : "<<stddev<<"\n";
+  // for(unsigned int i=0;i<FLAGS_num_particles;i++)
+  // {
+  //   float val = (p_ptr_arr[i].weight-meanval)/stddev;
+  //   if(val<0)
+  //   {
+  //     val = 0;
+  //   }
+  //   p_ptr_arr[i].weight = val;
+  // } 
+  // for(unsigned int i=0;i<FLAGS_num_particles;i++)
+  // {
+  //   std::cout<<"i : "<<i<<", "<<p_ptr_arr[i].weight<<"\n";
   // }
 
 }
@@ -332,7 +358,7 @@ void ParticleFilter::ObserveOdometry(const Vector2f& odom_loc,
   
   // std::cout<<"x : "<<odom_loc.x()<<"\n";
   // std::cout<<"y : "<<odom_loc.y()<<"\n";
-  std::cout<<"odom_angle : "<<odom_angle<<"\n";
+  // std::cout<<"odom_angle : "<<odom_angle<<"\n";
   if(!odom_initialized_) {
     prev_odom_loc_ = odom_loc;
     prev_odom_angle_ = odom_angle;
