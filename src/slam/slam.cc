@@ -34,6 +34,8 @@
 
 #include "vector_map/vector_map.h"
 
+#include<iomanip>
+
 using namespace math_util;
 using Eigen::Affine2f;
 using Eigen::Rotation2Df;
@@ -81,6 +83,7 @@ void SLAM::ObserveLaser(const vector<float>& ranges,
 void get_raster_table(const Vector2f& odom_loc, const float odom_angle, vector<Vector2f>* scan_ptr, vector< vector<float> >* raster_table_pointer)
 {
   //scan_ptr has the point cloud, the raster table would be populated in the raster_table argument
+  //the raster table will be aligned along odom_angle and cenetered at odom_loc
 
   //first we populate the table with 0 probs
   vector< vector<float> >& raster_table = *raster_table_pointer;
@@ -125,29 +128,29 @@ void get_raster_table(const Vector2f& odom_loc, const float odom_angle, vector<V
   float s = 2 * sigma * sigma;
   float total_sum = 0.0;
   //iterate through grid and map the grid-points to actual map-coordinates to calculate prob
-  for(unsigned int i=0; i<raster_table.size(); ++i)
+  for( int i=0; i<int(raster_table.size()); ++i)
   {
-    for(unsigned int j= 0; j<raster_table[i].size();++j)
+    for( int j= 0; j<int(raster_table[i].size());++j)
     {
-      float map_x = (i-raster_table.size()/2)*granualarity*cos(odom_angle) + 
-      (j-raster_table.size()/2)*granualarity*sin(odom_angle) + odom_loc.x();
+      float map_x = (float(i)-raster_table.size()/2)*granualarity*cos(odom_angle) + 
+      (float(j)-raster_table.size()/2)*granualarity*sin(odom_angle) + odom_loc.x();
 
-      float map_x = (i-raster_table.size()/2)*granualarity*sin(odom_angle) + 
-      (j-raster_table.size()/2)*granualarity*cos(odom_angle) + odom_loc.y();
+      float map_y = (float(i)-raster_table.size()/2)*granualarity*sin(odom_angle) + 
+      (float(j)-raster_table.size()/2)*granualarity*cos(odom_angle) + odom_loc.y();
 
       cout<<map_x<<" "<<map_y<<endl;
 
       //compute prob using all obstacles
-      for(unsigned int j = 0; j< scan.size(); ++j)
+      for(unsigned int k = 0; k< scan.size(); ++k)
       {
 
         //the obstacle position
-        float obst_x = scan[j].x();
-        float obst_y = scan[j].y();
+        float obst_x = scan[k].x();
+        float obst_y = scan[k].y();
 
         //prob
-        float r = (obst_x - map_x) * (obst_x - map_x) + (obst_y - map_y) * (obst_y - map_y)
-        float prob = exp(-r/s)/M_PI * s);
+        float r = (obst_x - map_x) * (obst_x - map_x) + (obst_y - map_y) * (obst_y - map_y);
+        float prob = exp(-r/s)/(M_PI * s);
 
         raster_table[i][j] += prob; 
         total_sum += prob;
@@ -169,12 +172,14 @@ void get_raster_table(const Vector2f& odom_loc, const float odom_angle, vector<V
 void test_get_raster_table()
 {
   cout<<"test raster table called"<<endl;
+
+ //--------------------------------------------------------------------------
   Vector2f odom_loc = Vector2f(5, 5);
   float odom_angle = 0.0;
   vector<Vector2f> scan;
   scan.push_back(Vector2f(6,6));
-  scan.push_back(Vector2f(5,6));
-  scan.push_back(Vector2f(9,9));
+  //scan.push_back(Vector2f(5,6));
+  //scan.push_back(Vector2f(9,9));
   scan.push_back(Vector2f(4,4));
   vector< vector<float> > raster_table;
   cout<<"function called"<<endl;
@@ -188,10 +193,92 @@ void test_get_raster_table()
   for(unsigned int i=0; i<raster_table.size(); ++i)
   {
     for(unsigned int j= 0; j<raster_table[i].size();++j)
-    cout<<raster_table[i][j]<<" ";
+    cout<<std::fixed<<std::setprecision(2)<<raster_table[i][j]<<" ";
 
     cout<<endl;
   }
+
+
+
+  //-----------------------------------------------------------------------
+  odom_loc = Vector2f(5, 5);
+  odom_angle = 0.0;
+  scan.clear();
+  raster_table.clear();
+  scan.push_back(Vector2f(6.5,6.5));
+  //scan.push_back(Vector2f(5,6));
+  //scan.push_back(Vector2f(9,9));
+  //scan.push_back(Vector2f(4,4));
+  //vector< vector<float> > raster_table;
+  cout<<"function called"<<endl;
+  
+  get_raster_table(odom_loc, odom_angle, &scan, &raster_table);
+  
+  cout<<"function call executed"<<endl;
+  
+
+
+  for(unsigned int i=0; i<raster_table.size(); ++i)
+  {
+    for(unsigned int j= 0; j<raster_table[i].size();++j)
+    cout<<std::fixed<<std::setprecision(2)<<raster_table[i][j]<<" ";
+
+    cout<<endl;
+  }
+
+
+  //-----------------------------------------------------------------------
+  odom_loc = Vector2f(5, 5);
+  odom_angle = M_PI/10;
+  scan.clear();
+  raster_table.clear();
+  scan.push_back(Vector2f(6.5,6.5));
+  //scan.push_back(Vector2f(5,6));
+  //scan.push_back(Vector2f(9,9));
+  //scan.push_back(Vector2f(4,4));
+  //vector< vector<float> > raster_table;
+  cout<<"function called"<<endl;
+  
+  get_raster_table(odom_loc, odom_angle, &scan, &raster_table);
+  
+  cout<<"function call executed"<<endl;
+  
+
+
+  for(unsigned int i=0; i<raster_table.size(); ++i)
+  {
+    for(unsigned int j= 0; j<raster_table[i].size();++j)
+    cout<<std::fixed<<std::setprecision(2)<<raster_table[i][j]<<" ";
+
+    cout<<endl;
+  }
+
+ //-----------------------------------------------------------------------
+  odom_loc = Vector2f(5, 5);
+  odom_angle = M_PI/7;
+  scan.clear();
+  raster_table.clear();
+  scan.push_back(Vector2f(6.5,6.5));
+  //scan.push_back(Vector2f(5,6));
+  //scan.push_back(Vector2f(9,9));
+  //scan.push_back(Vector2f(4,4));
+  //vector< vector<float> > raster_table;
+  cout<<"function called"<<endl;
+  
+  get_raster_table(odom_loc, odom_angle, &scan, &raster_table);
+  
+  cout<<"function call executed"<<endl;
+  
+
+
+  for(unsigned int i=0; i<raster_table.size(); ++i)
+  {
+    for(unsigned int j= 0; j<raster_table[i].size();++j)
+    cout<<std::fixed<<std::setprecision(2)<<raster_table[i][j]<<" ";
+
+    cout<<endl;
+  }
+
 
 }
 
