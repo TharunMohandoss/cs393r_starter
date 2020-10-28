@@ -50,8 +50,8 @@ using vector_map::VectorMap;
 
 #define grid_dim 4
 #define granualarity 0.5
-#define sigma 0.5
-#define sigma_range 2
+#define sigma 0.75
+// #define sigma_range 2
 
 
 
@@ -97,53 +97,71 @@ void get_raster_table(const Vector2f& odom_loc, const float odom_angle, vector<V
 
   //iterate through the points in scan_ptr and update the raster_table
   vector<Vector2f>& scan = *scan_ptr;
-  for(unsigned int j = 0; j< scan.size(); ++j)
+  // for(unsigned int j = 0; j< scan.size(); ++j)
+  //   {
+
+  //    //the obstacle position
+  //    float obst_x = scan[j].x();
+  //    float obst_y = scan[j].y();
+
+  //    //get the indices of the obstacle in the raster table
+  //     int raster_table_index_obstacle_x = int((obst_x - odom_loc.x())/granualarity) + int(raster_table.size()/2);
+  //     int raster_table_index_obstacle_y = int((obst_y - odom_loc.y())/granualarity) + int(raster_table.size()/2);
+
+  //    if(raster_table_index_obstacle_x >= int(raster_table.size()) || raster_table_index_obstacle_y >= int(raster_table.size()) ||
+  //    raster_table_index_obstacle_x < 0 || raster_table_index_obstacle_y <0)
+  //    {
+  //      continue; //since obstacle is out of the grid
+  //    }
+
+  //    cout<<"obstacle indices: "<<raster_table_index_obstacle_x<<" "<<raster_table_index_obstacle_y<<endl;
+  //    //update prob at obstacle indices
+  //   //  float prob = 1/(M_PI * s); //gaussian value at mean
+  //   //  raster_table[raster_table_index_obstacle_x][raster_table_index_obstacle_y] += prob; 
+
+
+  //   }
+
+  float s = 2 * sigma * sigma;
+  float total_sum = 0.0;
+  //iterate through grid and map the grid-points to actual map-coordinates to calculate prob
+  for(unsigned int i=0; i<raster_table.size(); ++i)
+  {
+    for(unsigned int j= 0; j<raster_table[i].size();++j)
     {
+      float map_x = (i-raster_table.size()/2)*granualarity*cos(odom_angle) + 
+      (j-raster_table.size()/2)*granualarity*sin(odom_angle) + odom_loc.x();
 
-     //the obstacle position
-     float obst_x = scan[j].x();
-     float obst_y = scan[j].y();
+      float map_x = (i-raster_table.size()/2)*granualarity*sin(odom_angle) + 
+      (j-raster_table.size()/2)*granualarity*cos(odom_angle) + odom_loc.y();
 
-     //get the indices of the obstacle in the raster table
-      int raster_table_index_obstacle_x = int((obst_x - odom_loc.x())/granualarity) + int(raster_table.size()/2);
-      int raster_table_index_obstacle_y = int((obst_y - odom_loc.y())/granualarity) + int(raster_table.size()/2);
+      cout<<map_x<<" "<<map_y<<endl;
 
-     if(raster_table_index_obstacle_x >= int(raster_table.size()) || raster_table_index_obstacle_y >= int(raster_table.size()) ||
-     raster_table_index_obstacle_x < 0 || raster_table_index_obstacle_y <0)
-     {
-       continue; //since obstacle is out of the grid
-     }
+      //compute prob using all obstacles
+      for(unsigned int j = 0; j< scan.size(); ++j)
+      {
 
-     cout<<"obstacle indices: "<<raster_table_index_obstacle_x<<" "<<raster_table_index_obstacle_y<<endl;
+        //the obstacle position
+        float obst_x = scan[j].x();
+        float obst_y = scan[j].y();
 
-     //update prob at obstacle indices
-     float s = 2 * sigma * sigma;
-     float prob = 1/(M_PI * s); //gaussian value at mean
-     raster_table[raster_table_index_obstacle_x][raster_table_index_obstacle_y] += prob;
+        //prob
+        float r = (obst_x - map_x) * (obst_x - map_x) + (obst_y - map_y) * (obst_y - map_y)
+        float prob = exp(-r/s)/M_PI * s);
 
-
-     //move around the obstacle in 2 directions - along odom_angle and perpendicular to odom_angle (2 more directions for reverse)
-    //  for(float step = granualarity; step<=sigma_range*sigma; step +=granualarity) //magnitude of step in each of 4 directions
-    //  {
-    //    //along odom angle +ive direction
-    //    float along_odom_pos_x = obst_x + step * cos(odom_angle);
-    //    float along_odom_pos_y = obst_y + step * sin(odom_angle);
-
-
-    //    //along odom angle -ive direction
-    //    float along_odom_neg_x = obst_x - step * cos(odom_angle);
-    //    float along_odom_neg_y = obst_y - step * sin(odom_angle);
-
-    //    //perpendicular odom angle +ive direction
-    //    float perpend_odom_pos_x = obst_x + step * sin(odom_angle);
-    //    float perpend_odom_pos_y = obst_y + step * cos(odom_angle);
-
-    //    //perpendicular odom angle -ive direction
-    //    float perpend_odom_neg_x = obst_x - step * sin(odom_angle);
-    //    float perpend_odom_neg_y = obst_y - step * cos(odom_angle);
-    //  }
+        raster_table[i][j] += prob; 
+        total_sum += prob;
+      }
 
     }
+  }
+
+  for(unsigned int i=0; i<raster_table.size(); ++i)
+  {
+    for(unsigned int j= 0; j<raster_table[i].size();++j)
+      raster_table[i][j] /= total_sum;
+  }
+
     
 }
 
