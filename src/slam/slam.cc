@@ -49,8 +49,8 @@ using vector_map::VectorMap;
 
 
 #define grid_dim 4
-#define granualarity 0.05
-#define sigma 0.05
+#define granualarity 0.5
+#define sigma 0.5
 #define sigma_range 2
 
 
@@ -105,10 +105,10 @@ void get_raster_table(const Vector2f& odom_loc, const float odom_angle, vector<V
      float obst_y = scan[j].y();
 
      //get the indices of the obstacle in the raster table
-     int raster_table_index_obstacle_x = int((obst_x - odom_loc.x())/granualarity) + int(raster_table.size()/2);
-     int raster_table_index_obstacle_y = int((obst_y - odom_loc.y())/granualarity) + int(raster_table.size()/2);
+      int raster_table_index_obstacle_x = int((obst_x - odom_loc.x())/granualarity) + int(raster_table.size()/2);
+      int raster_table_index_obstacle_y = int((obst_y - odom_loc.y())/granualarity) + int(raster_table.size()/2);
 
-     if(raster_table_index_obstacle_x >= raster_table.size() || raster_table_index_obstacle_y >= raster_table.size() ||
+     if(raster_table_index_obstacle_x >= int(raster_table.size()) || raster_table_index_obstacle_y >= int(raster_table.size()) ||
      raster_table_index_obstacle_x < 0 || raster_table_index_obstacle_y <0)
      {
        continue; //since obstacle is out of the grid
@@ -119,7 +119,7 @@ void get_raster_table(const Vector2f& odom_loc, const float odom_angle, vector<V
      //update prob at obstacle indices
      float s = 2 * sigma * sigma;
      float prob = 1/(M_PI * s); //gaussian value at mean
-     raster_table[raster_table_index_obstacle_x][raster_table_index_obstacle_y] = prob;
+     raster_table[raster_table_index_obstacle_x][raster_table_index_obstacle_y] += prob;
 
 
      //move around the obstacle in 2 directions - along odom_angle and perpendicular to odom_angle (2 more directions for reverse)
@@ -156,14 +156,20 @@ void test_get_raster_table()
   vector<Vector2f> scan;
   scan.push_back(Vector2f(6,6));
   scan.push_back(Vector2f(5,6));
-  vector< vector<float> >* raster_table_pointer;
-  get_raster_table(odom_loc, odom_angle, &scan, raster_table_pointer);
+  scan.push_back(Vector2f(9,9));
+  scan.push_back(Vector2f(4,4));
+  vector< vector<float> > raster_table;
+  cout<<"function called"<<endl;
+  
+  get_raster_table(odom_loc, odom_angle, &scan, &raster_table);
+  
+  cout<<"function call executed"<<endl;
+  
 
-  vector< vector<float> >& raster_table = *raster_table_pointer;
 
-  for(int i=0; i<raster_table.size(); ++i)
+  for(unsigned int i=0; i<raster_table.size(); ++i)
   {
-    for(int j= 0; j<raster_table[i].size();++j)
+    for(unsigned int j= 0; j<raster_table[i].size();++j)
     cout<<raster_table[i][j]<<" ";
 
     cout<<endl;
@@ -174,6 +180,9 @@ void test_get_raster_table()
 
 
 void SLAM::ObserveOdometry(const Vector2f& odom_loc, const float odom_angle) {
+test_get_raster_table();
+exit(0);
+
   if (!odom_initialized_) {
     prev_odom_angle_ = odom_angle;
     prev_odom_loc_ = odom_loc;
