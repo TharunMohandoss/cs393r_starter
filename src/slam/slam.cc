@@ -47,17 +47,90 @@ using std::swap;
 using std::vector;
 using vector_map::VectorMap;
 
+#define k1_x 0.2
+#define k2_x 0.2
+#define k1_y 0.1
+#define k2_y 0.1
+#define k3_theta 0.15
+#define k4_theta 0.15
+
+#define THETA_RES 0.05
+#define NUM_THETA_VALS 10
+
+#define X_RES 0.05
+#define NUM_X_VALS 5
+
+#define Y_RES 0.05
+#define NUM_Y_VALS 5
+// #define RASTER_SIZE 5
+// #define RASTER_RES 0.05
+
+#define SIGMA_RASTER 0.1
+
+#define ANGLE_THRESHOLD M_PI/6
+#define TRANS_THRESHOLD 0.5
+
+
 namespace slam {
 
 SLAM::SLAM() :
     prev_odom_loc_(0, 0),
     prev_odom_angle_(0),
-    odom_initialized_(false) {}
+    odom_initialized_(false), 
+    execute_csm_(false),
+    curr_x(0),
+    curr_y(0),
+    curr_theta(0) {
+      for(int i=0;i<2*RASTER_SIZE/RASTER_RES;i++)
+      {
+        std::vector<float> temp;
+        for(int j=0;j<2*RASTER_SIZE/RASTER_RES;j++)
+        {
+          temp.push_back(1);
+        }
+        raster_table_.push_back(temp);
+      }
+    }
 
 void SLAM::GetPose(Eigen::Vector2f* loc, float* angle) const {
   // Return the latest pose estimate of the robot.
   *loc = Vector2f(0, 0);
   *angle = 0;
+}
+
+void SLAM::CreatePointCloud(const vector<float>& ranges,
+                        float range_min,
+                        float range_max,
+                        float angle_min,
+                        float angle_max,
+                        vector<Vector2f>& pointcloud) {
+
+  int ranges_length = ranges.size();
+  float theta_inc = (angle_max - angle_min)/ranges_length;
+
+  for(int i = 0; i < ranges_length; i++) {
+    float theta_i, range_i, x_i, y_i;
+    range_i = ranges[i];
+    if( (range_i<=range_max-0.001) && (range_i>=range_min+0.001) )
+    {
+      theta_i = angle_min + i * theta_inc;
+      x_i = range_i * cos(theta_i);
+      y_i = range_i * sin(theta_i);
+      pointcloud.push_back(Vector2f(x_i, y_i)); 
+    }
+  }
+
+}
+
+float SLAM::RasterLookup(float x, float y) {
+  // raster_table_
+  int x_index, y_index;
+  x_index = ((int)RASTER_SIZE/RASTER_RES) + floor(x/RASTER_RES);
+  y_index = ((int)RASTER_SIZE/RASTER_RES) + floor(y/RASTER_RES);
+
+  return raster_table_[x_index][y_index];
+
+
 }
 
 void SLAM::ObserveLaser(const vector<float>& ranges,
@@ -68,6 +141,188 @@ void SLAM::ObserveLaser(const vector<float>& ranges,
   // A new laser scan has been observed. Decide whether to add it as a pose
   // for SLAM. If decided to add, align it to the scan from the last saved pose,
   // and save both the scan and the optimized pose.
+  // std::cout<<"1\n";
+  if(execute_csm_) {
+    // std::cout<<"2\n";
+    execute_csm_ = false;
+    float x_t, y_t, theta_t, abs_dtheta;
+    float max_log_score_sum = -(std::numeric_limits<float>::max()-1);
+    // this is wrt the global frame, can be changed
+    x_t = curr_x + dx_;
+    y_t = curr_y + dy_;
+    theta_t = curr_theta + dtheta_;
+    abs_dtheta = std::min(abs(dtheta_), float(2*M_PI)-abs(dtheta_));
+
+    float sigma_x, sigma_y, sigma_theta;
+    sigma_x = k1_x * sqrt(dx_*dx_ + dy_*dy_) + k2_x * abs(abs_dtheta);
+    sigma_y = k1_y * sqrt(dx_*dx_ + dy_*dy_) + k2_y * abs(abs_dtheta);
+    sigma_theta = k3_theta * sqrt(dx_*dx_ + dy_*dy_) + k4_theta * abs(abs_dtheta);
+
+    vector<Vector2f> pointcloud_poss;
+    CreatePointCloud(ranges, range_min, range_max, angle_min, angle_max, pointcloud_poss);
+    std::cout<<"3\n";
+    for(int theta_i = -NUM_THETA_VALS; theta_i<=NUM_THETA_VALS; theta_i++){
+
+      vector<Vector2f> pointcloud_poss_rotated;
+      float theta_poss_rel;
+      
+      theta_poss_rel = dtheta_ + THETA_RES * theta_i;
+      // potential problem
+      for(auto x : pointcloud_poss)
+      {
+        pointcloud_poss_rotated.push_back(Eigen::Rotation2Df(-theta_poss_rel)*x);
+      }
+      // pointcloud_poss_rotated = Eigen::Rotation2Df(-theta_poss_rel)*pointcloud_poss;
+      // std::cout<<"Condition: "<<(-NUM_X_VALS <= NUM_X_VALS)<<"\n";
+      for( int x_i = -NUM_X_VALS; x_i<=NUM_X_VALS; x_i++){
+        for( int y_i = -NUM_Y_VALS; y_i<=NUM_Y_VALS; y_i++){
+          // std::cout<<"4"<<"\n";
+          int num_accepted = 0;
+          float log_score_sum = 0;
+
+          float dx_poss, dy_poss, dx_prev, dy_prev;
+
+          dx_poss = dx_ + X_RES * x_i;
+          dy_poss = dy_ + Y_RES * y_i;
+          Vector2f d_poss(dx_poss, dy_poss);
+          Vector2f d_prev = Eigen::Rotation2Df(prev_odom_angle_)*d_poss;
+          dx_prev = d_prev.x();
+          dy_prev = d_prev.y();
+
+          for(int cur_index = 0;cur_index<((int)pointcloud_poss_rotated.size());cur_index++)
+          {
+            float x_cur,y_cur;
+            x_cur = pointcloud_poss_rotated[cur_index].x() + dx_prev;
+            y_cur = pointcloud_poss_rotated[cur_index].y() + dy_prev;
+
+            if(abs(x_cur) < RASTER_SIZE && abs(y_cur) < RASTER_SIZE) {
+              num_accepted++;
+              float point_score = RasterLookup(x_cur, y_cur);
+              log_score_sum += log(point_score);
+            }
+
+          }
+          std::cout<<"num_accepted : "<<num_accepted<<endl;
+
+          if(num_accepted > 0) {
+            log_score_sum = log_score_sum/num_accepted;
+            log_score_sum -= pow(X_RES * x_i, 2)/(2*sigma_x);
+            log_score_sum -= pow(Y_RES * y_i, 2)/(2*sigma_y);
+            log_score_sum -= pow(THETA_RES * theta_i, 2)/(2*sigma_theta);
+            std::cout<<"log_score_sum : "<<log_score_sum<<", max_log_score_sum : "<<max_log_score_sum<<endl;
+            if(log_score_sum > max_log_score_sum) {
+              std::cout<<"in\n";
+              max_log_score_sum = log_score_sum;
+              curr_x = x_t + X_RES * 0;
+              curr_y = y_t + Y_RES * 0;
+              curr_theta = theta_t + THETA_RES * 0;
+            }
+          }
+
+
+        }
+      }
+    }
+    std::cout<<"curr_x : "<<curr_x<<", curr_y : "<<curr_y<<"\n";
+    for(auto x : pointcloud_poss)
+    {
+      Vector2f temp = Eigen::Rotation2Df(-curr_theta)*x;
+      temp.x() += curr_x;
+      temp.y() += curr_y;
+      map_.push_back(temp);
+    }
+    GetRasterTable(Vector2f(0, 0), 0, pointcloud_poss);
+
+  }
+}
+
+void SLAM::GetRasterTable(const Vector2f& odom_loc, const float odom_angle, vector<Vector2f>& scan_ptr)
+{
+  //scan_ptr has the point cloud, the raster table would be populated in the raster_table argument
+  //the raster table will be aligned along odom_angle and cenetered at odom_loc
+
+  //first we populate the table with 0 probs
+  vector< vector<float> >& raster_table = raster_table_;
+  for (int i = 0; i < 2*RASTER_SIZE/RASTER_RES; i++)
+  {
+    // vector<float> temp;
+    for (int j = 0; j < 2*RASTER_SIZE/RASTER_RES; j++)
+    {
+        // temp.push_back(0);
+      raster_table[i][j] = 1;
+    }
+    // raster_table.push_back(temp);
+  }
+  cout<<"0 prob initialization done"<<endl;
+
+  //iterate through the points in scan_ptr and update the raster_table
+  // vector<Vector2f>& scan = scan_ptr;
+  // for(int j = 0; j< scan.size(); ++j)
+  //   {
+
+  //    //the obstacle position
+  //    float obst_x = scan[j].x();
+  //    float obst_y = scan[j].y();
+
+  //    //get the indices of the obstacle in the raster table
+  //     int raster_table_index_obstacle_x = int((obst_x - odom_loc.x())/granualarity) + int(raster_table.size()/2);
+  //     int raster_table_index_obstacle_y = int((obst_y - odom_loc.y())/granualarity) + int(raster_table.size()/2);
+
+  //    if(raster_table_index_obstacle_x >= int(raster_table.size()) || raster_table_index_obstacle_y >= int(raster_table.size()) ||
+  //    raster_table_index_obstacle_x < 0 || raster_table_index_obstacle_y <0)
+  //    {
+  //      continue; //since obstacle is out of the grid
+  //    }
+
+  //    cout<<"obstacle indices: "<<raster_table_index_obstacle_x<<" "<<raster_table_index_obstacle_y<<endl;
+  //    //update prob at obstacle indices
+  //   //  float prob = 1/(M_PI * s); //gaussian value at mean
+  //   //  raster_table[raster_table_index_obstacle_x][raster_table_index_obstacle_y] += prob; 
+
+
+  //   }
+
+  // float s = 2 * SIGMA_RASTER * SIGMA_RASTER;
+  // float total_sum = 0.0;
+  // //iterate through grid and map the grid-points to actual map-coordinates to calculate prob
+  // for( int i=0; i<int(raster_table.size()); ++i)
+  // {
+  //   for( int j= 0; j<int(raster_table[i].size());++j)
+  //   {
+  //     float map_x = (float(i)-raster_table.size()/2 + 0.5)*RASTER_RES*cos(odom_angle) + 
+  //     (float(j)-raster_table.size()/2 + 0.5)*RASTER_RES*sin(odom_angle) + odom_loc.x();
+
+  //     float map_y = (float(i)-raster_table.size()/2 + 0.5)*RASTER_RES*sin(odom_angle) + 
+  //     (float(j)-raster_table.size()/2 + 0.5)*RASTER_RES*cos(odom_angle) + odom_loc.y();
+
+  //     // cout<<map_x<<" "<<map_y<<endl;
+
+  //     //compute prob using all obstacles
+  //     for(int k = 0; k< scan.size(); ++k)
+  //     {
+
+  //       //the obstacle position
+  //       float obst_x = scan[k].x();
+  //       float obst_y = scan[k].y();
+
+  //       //prob
+  //       float r = (obst_x - map_x) * (obst_x - map_x) + (obst_y - map_y) * (obst_y - map_y);
+  //       float prob = exp(-r/s)/(M_PI * s);
+
+  //       raster_table[i][j] += prob; 
+  //       total_sum += prob;
+  //     }
+
+  //   }
+  // }
+
+  // for(int i=0; i<raster_table.size(); ++i)
+  // {
+  //   for(int j= 0; j<raster_table[i].size();++j)
+  //     raster_table[i][j] /= total_sum;
+  // }
+
+    
 }
 
 void SLAM::ObserveOdometry(const Vector2f& odom_loc, const float odom_angle) {
@@ -79,13 +334,25 @@ void SLAM::ObserveOdometry(const Vector2f& odom_loc, const float odom_angle) {
   }
   // Keep track of odometry to estimate how far the robot has moved between 
   // poses.
+  float abs_dtheta;
+  dx_ = odom_loc.x() - prev_odom_loc_.x();
+  dy_ = odom_loc.y() - prev_odom_loc_.y();
+  dtheta_ = odom_angle - prev_odom_angle_;
+  abs_dtheta = std::min(abs(dtheta_), float(2*M_PI)-abs(dtheta_));
+
+  if(abs(abs_dtheta)>ANGLE_THRESHOLD || sqrt(dx_ * dx_ + dy_ * dy_) > TRANS_THRESHOLD) {
+    execute_csm_ = true;
+    prev_odom_loc_ = odom_loc;
+    prev_odom_angle_ = odom_angle;
+  }
+
 }
 
 vector<Vector2f> SLAM::GetMap() {
-  vector<Vector2f> map;
+  
   // Reconstruct the map as a single aligned point cloud from all saved poses
   // and their respective scans.
-  return map;
+  return map_;
 }
 
 }  // namespace slam
