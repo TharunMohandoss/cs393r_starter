@@ -75,12 +75,14 @@ class SLAM {
 
   bool execute_csm_;
   float dx_, dy_, dtheta_;
+  float change_x,change_y,change_theta;
   std::vector<std::vector<float>> raster_table;
 
   float curr_x, curr_y, curr_theta;
   std::vector<std::vector<float>> raster_table_;
 
   std::vector<Eigen::Vector2f> map_;
+  int raster_count = 0;
 };
 }  // namespace slam
 

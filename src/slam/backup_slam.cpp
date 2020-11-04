@@ -32,7 +32,6 @@
 #include <iostream>
 #include <fstream>
 #include "slam.h"
-#include <string>
 
 #include "vector_map/vector_map.h"
 
@@ -103,7 +102,7 @@ SLAM::SLAM() :
 void SLAM::GetPose(Eigen::Vector2f* loc, float* angle) const {
   // Return the latest pose estimate of the robot.
   *loc = Vector2f(curr_x + change_x, curr_y + change_y);
-  *angle = curr_theta + change_theta;
+  *angle = (Eigen::Rotation2Df(curr_theta)*Eigen::Rotation2Df(change_theta)).angle();
 }
 
 void SLAM::CreatePointCloud(const vector<float>& ranges,
@@ -122,7 +121,7 @@ void SLAM::CreatePointCloud(const vector<float>& ranges,
     if( (range_i<=range_max-0.001) && (range_i>=range_min+0.001) )
     {
       theta_i = angle_min + i * theta_inc;
-      x_i = range_i * cos(theta_i) + 0.2;
+      x_i = range_i * cos(theta_i);
       y_i = range_i * sin(theta_i);
       pointcloud.push_back(Vector2f(x_i, y_i)); 
     }
@@ -140,18 +139,6 @@ float SLAM::RasterLookup(float x, float y) {
 
 
 }
-// float SLAM::GetRaster(vector<Vector2f>& output_) {
-//   // raster_table_
-  
-//   // int x_index, y_index;
-//   // x_index = ((int)RASTER_SIZE/RASTER_RES) + floor(x/RASTER_RES);
-//   // y_index = ((int)RASTER_SIZE/RASTER_RES) + floor(y/RASTER_RES);
-
-//   // return raster_table_[x_index][y_index];
-
-
-}
-
 
 void SLAM::ObserveLaser(const vector<float>& ranges,
                         float range_min,
@@ -178,7 +165,7 @@ void SLAM::ObserveLaser(const vector<float>& ranges,
     std::cout<<"curr_theta : "<<curr_theta<<endl;
     x_t = curr_x + dx_;
     y_t = curr_y + dy_;
-    theta_t = curr_theta + dtheta_;
+    theta_t = (Eigen::Rotation2Df(curr_theta)*Eigen::Rotation2Df(dtheta_)).angle();;
     curr_x = x_t;
     curr_y = y_t;
     curr_theta = theta_t;
@@ -201,7 +188,8 @@ void SLAM::ObserveLaser(const vector<float>& ranges,
       vector<Vector2f> pointcloud_poss_rotated;
       float theta_poss_rel;
       
-      theta_poss_rel = dtheta_ + THETA_RES * theta_i;
+      theta_poss_rel = (Eigen::Rotation2Df(dtheta_)*Eigen::Rotation2Df(THETA_RES*theta_i)).angle();
+      // dtheta_ + THETA_RES * theta_i;
       // potential problem
       for(auto x : pointcloud_poss)
       {
@@ -238,18 +226,13 @@ void SLAM::ObserveLaser(const vector<float>& ranges,
 
           }
           // std::cout<<"num_accepted : "<<num_accepted<<endl;
-          if(y_i==0 && theta_i==0)
-          {
-            std::cout<<"x_i :"<<x_i<<",y_i : "<<y_i<<", theta_i : "<<theta_i<<" : "<<log_score_sum/num_accepted<<endl;
-          }
+
           if(num_accepted > 0) {
             log_score_sum = log_score_sum/num_accepted;
             log_score_sum -= pow(X_RES * x_i, 2)/(2*sigma_x);
             log_score_sum -= pow(Y_RES * y_i, 2)/(2*sigma_y);
             log_score_sum -= pow(THETA_RES * theta_i, 2)/(2*sigma_theta);
-            // std::cout<<"x_i : "<<x_i<<", y_i"
             // std::cout<<"log_score_sum : "<<log_score_sum<<", max_log_score_sum : "<<max_log_score_sum<<endl;
-
             if(log_score_sum > max_log_score_sum) {
               // std::cout<<"in\n";
               max_log_score_sum = log_score_sum;
@@ -257,14 +240,6 @@ void SLAM::ObserveLaser(const vector<float>& ranges,
               add_y = Y_RES * y_i;
               add_theta = THETA_RES * theta_i;
             }
-            // if(y_i==0)
-            // {
-            //   std::cout<<"x_i"<<x_i<<",y_i"<<y_i<<", theta_i : "<<theta_i<<" : "<<log_score_sum<<endl;
-            // }
-            // if(theta_i==0)
-            // {
-            //   std::cout<<"x_i"<<x_i<<",y_i"<<y_i<<", theta_i : "<<theta_i<<" : "<<log_score_sum<<endl;
-            // }
           }
 
 
@@ -275,7 +250,8 @@ void SLAM::ObserveLaser(const vector<float>& ranges,
     // std::cout<<"max_log_score_sum : "<<max_log_score_sum<<endl;
     curr_x += add_x;
     curr_y += add_y;
-    curr_theta += add_theta;
+    // curr_theta += add_theta;
+    curr_theta = (Eigen::Rotation2Df(curr_theta)*Eigen::Rotation2Df(add_theta)).angle();
     for(auto x : pointcloud_poss)
     {
       Vector2f temp = Eigen::Rotation2Df(curr_theta)*x;
@@ -290,7 +266,7 @@ void SLAM::ObserveLaser(const vector<float>& ranges,
     std::cout<<"curr_theta : "<<curr_theta<<endl;
     std::cout<<"add_x : "<<add_x<<endl;
     std::cout<<"add_y : "<<add_y<<endl;
-    std::cout<<"add_theta : "<<add_theta<<endl<<endl<<endl;
+    std::cout<<"add_theta : "<<add_theta<<endl;
   }
 }
 
@@ -373,9 +349,8 @@ void SLAM::GetRasterTable(const Vector2f& odom_loc, const float odom_angle, vect
 
     }
   }
-  raster_count += 1;
   std::ofstream myfile;
-  myfile.open ("vals"+std::to_string(raster_count)+".txt");
+  myfile.open ("vals.txt");
   
 
   for(int i=0; i<((int)raster_table.size()); ++i)
@@ -404,14 +379,9 @@ void SLAM::ObserveOdometry(const Vector2f& odom_loc, const float odom_angle) {
   float abs_dtheta;
   change_x = odom_loc.x() - prev_odom_loc_.x();
   change_y = odom_loc.y() - prev_odom_loc_.y();
-  change_theta = odom_angle - prev_odom_angle_;
+  change_theta = (Eigen::Rotation2Df(odom_angle)*Eigen::Rotation2Df(-prev_odom_angle_)).angle();
+  std::cout<<"change_theta : "<<change_theta<<"\n";
   abs_dtheta = std::min(abs(change_theta), float(2*M_PI)-abs(change_theta));
-  // Eigen::Rotation2Df x(2*M_PI);
-  // Eigen::Vector2f b(1,0);
-  // Eigen::Vector2f a = x*b;
-  // std::cout<<"a.x() : "<<a.x()<<", a.y() : "<<a.y()<<endl;
-  // exit(0);
-
 
   if(abs(abs_dtheta)>ANGLE_THRESHOLD || sqrt(change_x * change_x + change_y * change_y) > TRANS_THRESHOLD) {
     execute_csm_ = true;

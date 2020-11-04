@@ -347,14 +347,14 @@ vector<float> Navigation::SelectCurvature(vector<Vector2f> obstacles){
 
 void Navigation::Run() {
 
-	// vector<float> ret_vals = SelectCurvature(point_cloud_);
-	// nav_goal_loc_ = Vector2f(10,0);
+	vector<float> ret_vals = SelectCurvature(point_cloud_);
+	nav_goal_loc_ = Vector2f(10,0);
 	// float v = OneDTOC(prev_velocity, 1, 4, -4, ret_vals[0]);
 	// prev_velocity = v;
 
-	// drive_msg_.velocity = 0.1;
+	drive_msg_.velocity = 1;
 	// drive_msg_.curvature = ret_vals[1];
-	drive_msg_.velocity = 0.1;
+	// drive_msg_.velocity = 0.1;
 	drive_msg_.curvature = 0;
 	drive_pub_.publish(drive_msg_);
 }
