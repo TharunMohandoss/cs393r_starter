@@ -352,10 +352,10 @@ void Navigation::Run() {
 	// float v = OneDTOC(prev_velocity, 1, 4, -4, ret_vals[0]);
 	// prev_velocity = v;
 
-	drive_msg_.velocity = 1;
+	drive_msg_.velocity = 0.5;
 	// drive_msg_.curvature = ret_vals[1];
 	// drive_msg_.velocity = 0.1;
-	drive_msg_.curvature = 0;
+	drive_msg_.curvature = -8;
 	drive_pub_.publish(drive_msg_);
 }
 

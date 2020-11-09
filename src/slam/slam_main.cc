@@ -134,7 +134,7 @@ void LaserCallback(const sensor_msgs::LaserScan& msg) {
       msg.angle_max);
   PublishMap();
   PublishPose();
-  PublishRaster();
+  // PublishRaster();
 }
 
 void OdometryCallback(const nav_msgs::Odometry& msg) {
