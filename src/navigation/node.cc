@@ -92,14 +92,14 @@ public:
 			float x_proj = line.p0.x() + t * p0_p1_x;
 			float y_proj = line.p0.y() + t * p0_p1_y;
 
-			float dist = -(pow(x_proj - point.x(), 2) + pow(y_proj - point.y(), 2));
+			float dist = (pow(x_proj - point.x(), 2) + pow(y_proj - point.y(), 2));
 
 			if(dist<min_dist) {
 				min_dist = dist;
 			}
 			
 		}
-		return min_dist;
+		return -min_dist;
 	}
 	
 };
