@@ -34,6 +34,7 @@ public:
 	Node(int i, int j) {
 		this->i = i;
 		this->j = j; 
+		//need to implement distance from end point as h
 	}
 
 	string GetState() {

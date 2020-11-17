@@ -89,6 +89,15 @@ class SimpleQueue {
     return false;
   }
 
+  //check
+  Priority GetPriority(const Value& v)
+  {
+    for (const auto& x : values_) {
+      if (x.first == v) return x.second;
+    }
+    return Priority();
+  }
+
   private:
   deque<pair<Value, Priority> > values_;
 };
