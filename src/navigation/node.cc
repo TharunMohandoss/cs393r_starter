@@ -29,6 +29,7 @@ class Node {
 public:
 	int i, j;
 	float g, h;	
+	string parent;	
 
 	Node(int i, int j) {
 		this->i = i;
