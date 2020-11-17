@@ -22,6 +22,8 @@
 #include <vector>
 
 #include "eigen3/Eigen/Dense"
+#include "node.cc"
+
 
 #ifndef NAVIGATION_H
 #define NAVIGATION_H
@@ -71,6 +73,7 @@ class Navigation {
   // Used to set the next target pose.
   void SetNavGoal(const Eigen::Vector2f& loc, float angle);
   float OneDTOC(float u,float u_max,float a_max,float a_min,float s);
+	void CalculateGrid(Vector2f xy, int& i, int& j);
 
  private:
 

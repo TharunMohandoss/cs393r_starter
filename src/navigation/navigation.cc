@@ -38,6 +38,7 @@
 #include <cstdlib>
 #include <limits>
 #include <algorithm>
+
 using Eigen::Vector2f;
 using amrl_msgs::AckermannCurvatureDriveMsg;
 using amrl_msgs::VisualizationMsg;
@@ -47,7 +48,7 @@ using std::vector;
 using namespace math_util;
 using namespace ros_helpers;
 
-
+#define GRID_RES 0.25
 
 namespace {
 ros::Publisher drive_pub_;
@@ -89,6 +90,7 @@ Navigation::Navigation(const string& map_file, ros::NodeHandle* n) :
 void Navigation::SetNavGoal(const Vector2f& loc, float angle) {
 	// nav_goal_loc_ = loc;
 	// nav_goal_angle_ = angle;
+	Node node(2,3);
 }
 
 
@@ -396,6 +398,16 @@ float Navigation::OneDTOC(float u,float u_max,float a_max,float a_min,float s)
 	{
 		return u + a_min*timestep;//decelrated value
 	}
+}
+
+// i is along x axis and j is along y axis
+void Navigation::CalculateGrid(Vector2f xy, int& i, int& j) {
+	float x, y;
+	x = xy.x();
+	y = xy.y();
+
+	i = floor(x/GRID_RES);
+	j = floor(y/GRID_RES);
 }
 
 }  // namespace navigation
