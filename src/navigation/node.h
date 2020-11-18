@@ -30,7 +30,7 @@ class Node {
 public:
 	int i, j;
 	float g, h;	
-	Node* parent;	
+	string parent;	
 
 	Node(int i, int j);
 	Node()
@@ -39,16 +39,7 @@ public:
 	}
 	Node(int i, int j,const Node& goal);
 
-	// string GetState() {
-	// 	pair<int,int> state;
-	// 	state.first = this->i;
-	// 	state.second = this->j;
-	// 	// string istate = to_string(this->i);
-	// 	// string jstate = to_string(this->j);
-	// 	// string comma = ",";
-	// 	// string state = istate + comma + jstate; 
-	// 	return state;
-	// }
+	string GetState();
 
 	bool NodeIntersectsMap(vector<line2f> map_lines);
 	// needs to be implemented

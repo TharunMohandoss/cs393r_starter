@@ -95,17 +95,20 @@ void Navigation::SetNavGoal(const Vector2f& loc, float angle) {
 	// nav_goal_angle_ = angle;
 	map_.Load("maps/GDC1.txt");
 	cout<<"firstin\n";
-  	// const uint32_t kColor = 0xd67d00;
-	Node start(0,0);
-	Node goal(3,4);
+  const uint32_t kColor = 0xd67d00;
+	Node start(-92,31);
+	Node goal(-40,18);
 	vector<pair<int,int>> answer;
 	Astar(map_,start,goal,answer);
-	// visualization::ClearVisualizationMsg(global_viz_msg_);
-	for(int i =0;i<((int)answer.size());i++)
+	visualization::ClearVisualizationMsg(global_viz_msg_);
+	for(int i =0;i<((int)answer.size()-1);i++)
 	{
-		cout<<answer[i].first<<","<<answer[i].second<<endl;
+		//cout<<answer[i].first<<","<<answer[i].second<<endl;
+		Vector2f first_point(answer[i].first * GRID_RES, answer[i].second * GRID_RES);
+		Vector2f second_point(answer[i+1].first * GRID_RES, answer[i+1].second * GRID_RES);
+		visualization::DrawLine(first_point, second_point, kColor, global_viz_msg_);
 	}
-	// viz_pub_.publish(global_viz_msg_);
+	viz_pub_.publish(global_viz_msg_);
 }
 
 
@@ -582,6 +585,13 @@ float Node::GetValue(vector<line2f> map_lines) {
 	// }
 	// return -min_dist;
 }
+string Node::GetState() {
+	 	string istate = to_string(this->i);
+	 	string jstate = to_string(this->j);
+	 	string comma = ",";
+	 	string state = istate + comma + jstate; 
+	 	return state;
+}
 float Node::GetPriority()
 {
 	return -this->g - this->h;
@@ -598,17 +608,17 @@ float Node::GetPriority()
 //returns 1 if path found
 int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point,vector<pair<int,int>>& answer)
 {
-	SimpleQueue<Node,float> open_queue;
-	SimpleQueue<Node,float> closed_queue;
-		node_map[q.GetState()] = q;
-	open_queue.Push(start_point,start_point.GetPriority());
+	SimpleQueue<string,float> open_queue;
+	SimpleQueue<string,float> closed_queue;
 	unordered_map<string, Node> node_map;
-
+	node_map[start_point.GetState()] = start_point;
+	open_queue.Push(start_point.GetState(),start_point.GetPriority());
+	
 	while(!open_queue.Empty())
 	{
 		cout<<"inA\n";
-		Node q = open_queue.Pop();
-		
+		string q_str = open_queue.Pop();
+		Node q = node_map[q_str];
 		
 		Node succesors[8];
 		int succesors_x[] = {-1,-1,0,1,1,1,0,-1};//clockwise starting from left
@@ -629,20 +639,16 @@ int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point,vector<pai
 			}
 			if(succesor==end_point)
 			{
-				end_point.parent = &q;
+				end_point.parent = q.GetState();
 				Node cur_node = end_point;
-				int count = 0;
-				while(!(cur_node == start_point))
+
+				while(!(cur_node.GetState() == start_point.GetState()))
 				{
-					if(count==4)
-					{
-						break;
-					}
-					count++;
+
 					pair<int,int> node_pair(cur_node.i,cur_node.j);
-					cout<<"inside loop, i : "<<cur_node.i<<", j : "<<cur_node.j<<endl;
+					//cout<<"inside loop, i : "<<cur_node.i<<", j : "<<cur_node.j<<endl;
 					answer.push_back(node_pair);
-					cur_node = *(cur_node.parent);
+					cur_node = node_map[cur_node.parent];
 				}
 				pair<int,int> node_pair(cur_node.i,cur_node.j);
 				answer.push_back(node_pair);
@@ -650,18 +656,18 @@ int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point,vector<pai
 			}
 			succesor.g = q.g + WEIGHT_COST*succesor.GetValue(map_.lines) + distances[i];//to implement cost as value?
 			// succesor.h = abs(end_point.i-succesor.i) + abs(end_point.j-succesor.j);//what cost is best?
-			if(open_queue.Exists(succesor))
+			if(open_queue.Exists(succesor.GetState()))
 			{
-				float cur_priority = open_queue.GetPriority(succesor);
+				float cur_priority = open_queue.GetPriority(succesor.GetState());
 				if(succesor.GetPriority() > cur_priority)
 				{
 					continue;
 					// open_queue.push(succesor,succesor.g+succesor.h);
 				}
 			}
-			else if(closed_queue.Exists(succesor))
+			else if(closed_queue.Exists(succesor.GetState()))
 			{
-				float cur_priority = closed_queue.GetPriority(succesor);
+				float cur_priority = closed_queue.GetPriority(succesor.GetState());
 				if(succesor.GetPriority() > cur_priority)
 				{
 					continue;
@@ -670,19 +676,16 @@ int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point,vector<pai
 			}
 			else
 			{	
-				succesor.parent = &q;
-				cout<<"parent, i : "<<succesor.i<<",j : "<<succesor.j<<", parent is i : "<<succesor.parent->i<<", j : "<<succesor.parent->j<<endl;
-				open_queue.Push(succesor,succesor.GetPriority());
-				Node new_succ = open_queue.Search(succesor);
-				// cout<<"newparent, i : "<<new_succ.i<<",j : "<<new_succ.j<<", parent is i : "<<new_succ.parent->i<<", j : "<<new_succ.parent->j<<endl;
-				// Node new_succ2 = open_queue.Pop();
-				// cout<<"newparent, i : "<<new_succ2.i<<",j : "<<new_succ2.j<<", parent is i : "<<new_succ2.parent->i<<", j : "<<new_succ2.parent->j<<endl;
-				// exit(0);
+				succesor.parent = q.GetState();
+				//cout<<"parent, i : "<<succesor.i<<",j : "<<succesor.j<<", parent is i : "<<succesor.parent->i<<", j : "<<succesor.parent->j<<endl;
+				open_queue.Push(succesor.GetState(),succesor.GetPriority());
+				node_map[succesor.GetState()] = succesor;
+				
 			}
 
 			i++;
 		}
-		closed_queue.Push(q,q.GetPriority());
+		closed_queue.Push(q.GetState(),q.GetPriority());
 
 	}
 	return 0;
