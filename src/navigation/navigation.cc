@@ -44,7 +44,9 @@ using amrl_msgs::AckermannCurvatureDriveMsg;
 using amrl_msgs::VisualizationMsg;
 using std::string;
 using std::vector;
-
+//
+using geometry::line2f;
+//
 using namespace math_util;
 using namespace ros_helpers;
 
@@ -85,12 +87,13 @@ Navigation::Navigation(const string& map_file, ros::NodeHandle* n) :
   global_viz_msg_ = visualization::NewVisualizationMessage(
       "map", "navigation_global");
   InitRosHeader("base_link", &drive_msg_.header);
+
 }
 
 void Navigation::SetNavGoal(const Vector2f& loc, float angle) {
 	// nav_goal_loc_ = loc;
 	// nav_goal_angle_ = angle;
-	Node node(2,3);
+	
 }
 
 

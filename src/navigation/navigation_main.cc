@@ -89,7 +89,7 @@ void LaserCallback(const sensor_msgs::LaserScan& msg) {
 	// might be a problem
 	for(unsigned int i=0; i<msg.ranges.size(); i++) {
 		float theta, x, y;
-    std::cout<<"updated\n";
+
 		theta = msg.angle_min + (i * msg.angle_increment);
 		x = msg.ranges[i] * cos(theta) + kLaserLoc.x();
 		y = msg.ranges[i] * sin(theta) + kLaserLoc.y();
