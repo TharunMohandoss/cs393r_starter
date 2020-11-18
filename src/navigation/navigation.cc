@@ -95,34 +95,17 @@ void Navigation::SetNavGoal(const Vector2f& loc, float angle) {
 	// nav_goal_angle_ = angle;
 	map_.Load("maps/GDC1.txt");
 	cout<<"firstin\n";
-  	const uint32_t kColor = 0xd67d00;
+  	// const uint32_t kColor = 0xd67d00;
 	Node start(0,0);
 	Node goal(3,4);
-	Astar(map_,start,goal);
-	visualization::ClearVisualizationMsg(global_viz_msg_);
-	float cur_i=goal.i,cur_j=goal.j;
-	Node cur_node = goal;
-	float prev_i=cur_node.parent->i,prev_j=cur_node.parent->j;
-	cout<<"in\n";
-	while(true)
+	vector<pair<int,int>> answer;
+	Astar(map_,start,goal,answer);
+	// visualization::ClearVisualizationMsg(global_viz_msg_);
+	for(int i =0;i<((int)answer.size());i++)
 	{
-
-		cout<<"in1\n";
-		cout<<"cur_i : "<<cur_i<<", cur_j : "<<cur_j<<", prev_i : "<<prev_i<<", prev_j : "<<prev_j<<endl;
-		Vector2f cur(cur_i,cur_j);
-		Vector2f prev(prev_i,prev_j);
-		visualization::DrawLine(cur,prev,kColor,global_viz_msg_);
-		cur_node = *(cur_node.parent);
-		if(cur_node==start)
-		{
-			break;
-		}
-		cur_i = prev_i;
-		cur_j = prev_j;
-		prev_i = cur_node.parent->i;
-		prev_j = cur_node.parent->j;
+		cout<<answer[i].first<<","<<answer[i].second<<endl;
 	}
-	viz_pub_.publish(global_viz_msg_);
+	// viz_pub_.publish(global_viz_msg_);
 }
 
 
@@ -608,16 +591,20 @@ float Node::GetPriority()
 #define ASTAR
 
 //returns 1 if path found
-int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point)
+int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point,vector<pair<int,int>>& answer)
 {
 	SimpleQueue<Node,float> open_queue;
 	SimpleQueue<Node,float> closed_queue;
+		node_map[q.GetState()] = q;
 	open_queue.Push(start_point,start_point.GetPriority());
+	unordered_map<string, Node> node_map;
+
 	while(!open_queue.Empty())
 	{
 		cout<<"inA\n";
 		Node q = open_queue.Pop();
-		cout<<"q.i : "<<q.i<<", q.j "<<q.j<<endl;
+		
+		
 		Node succesors[8];
 		int succesors_x[] = {-1,-1,0,1,1,1,0,-1};//clockwise starting from left
 		int succesors_y[] = {0,1,1,1,0,-1,-1,-1};
@@ -628,6 +615,7 @@ int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point)
 			succesors[neigh] = cur_succesor;
 		}
 		int i = 0;
+		//potent
 		for(auto& succesor : succesors)
 		{
 			if(succesor.NodeIntersectsMap(map_.lines))
@@ -637,6 +625,22 @@ int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point)
 			if(succesor==end_point)
 			{
 				end_point.parent = &q;
+				Node cur_node = end_point;
+				int count = 0;
+				while(!(cur_node == start_point))
+				{
+					if(count==4)
+					{
+						break;
+					}
+					count++;
+					pair<int,int> node_pair(cur_node.i,cur_node.j);
+					cout<<"inside loop, i : "<<cur_node.i<<", j : "<<cur_node.j<<endl;
+					answer.push_back(node_pair);
+					cur_node = *(cur_node.parent);
+				}
+				pair<int,int> node_pair(cur_node.i,cur_node.j);
+				answer.push_back(node_pair);
 				return 1;
 			}
 			succesor.g = q.g + WEIGHT_COST*succesor.GetValue(map_.lines) + distances[i];//to implement cost as value?
@@ -662,7 +666,13 @@ int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point)
 			else
 			{	
 				succesor.parent = &q;
+				cout<<"parent, i : "<<succesor.i<<",j : "<<succesor.j<<", parent is i : "<<succesor.parent->i<<", j : "<<succesor.parent->j<<endl;
 				open_queue.Push(succesor,succesor.GetPriority());
+				Node new_succ = open_queue.Search(succesor);
+				// cout<<"newparent, i : "<<new_succ.i<<",j : "<<new_succ.j<<", parent is i : "<<new_succ.parent->i<<", j : "<<new_succ.parent->j<<endl;
+				// Node new_succ2 = open_queue.Pop();
+				// cout<<"newparent, i : "<<new_succ2.i<<",j : "<<new_succ2.j<<", parent is i : "<<new_succ2.parent->i<<", j : "<<new_succ2.parent->j<<endl;
+				// exit(0);
 			}
 
 			i++;

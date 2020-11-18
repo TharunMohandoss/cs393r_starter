@@ -98,6 +98,13 @@ class SimpleQueue {
     return 0;
   }
 
+  Value Search(Value v){
+    for (const auto& x : values_) {
+      if (x.first == v) return x.first;
+    }
+    return Value();
+  }
+
   private:
   deque<pair<Value, Priority> > values_;
 };
