@@ -92,7 +92,7 @@ public:
 		for(unsigned int i=0; i<map_lines.size(); i++) {
 			line2f line = map_lines[i];
 			Vector2f point( (this->i+0.5) * GRID_RES, (this->j+0.5) * GRID_RES);
-			float dist_points = pow(line.p0.x()-line.p1.x(), 2) + pow(line.p0.y()-line.p0.y(), 2);
+			float dist_points = pow(line.p0.x()-line.p1.x(), 2) + pow(line.p0.y()-line.p1.y(), 2);
 
 			 
 			
