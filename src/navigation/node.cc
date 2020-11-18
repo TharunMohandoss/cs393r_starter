@@ -17,6 +17,7 @@
 
 #include <iostream>
 #include <string> 
+#include <math.h>
 #include <vector>
 
 #define GRID_RES 0.25
@@ -34,6 +35,22 @@ public:
 	Node(int i, int j) {
 		this->i = i;
 		this->j = j; 
+		this->h = 0;
+		//need to implement distance from end point as h
+	}
+	Node(int i, int j,const Node& goal) {
+		this->i = i;
+		this->j = j; 
+
+		float diff_i = abs(goal.i - this->i);
+		float diff_j = abs(goal.j - this->j);
+		float min_diff = diff_i;
+		if(diff_j<min_diff)
+		{
+			min_diff = diff_j;
+		}
+		float max_diff = diff_j + diff_i - max_diff;
+		this->h = min_diff*1.4.14 + (max_diff-min_diff);
 		//need to implement distance from end point as h
 	}
 

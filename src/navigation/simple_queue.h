@@ -95,7 +95,7 @@ class SimpleQueue {
     for (const auto& x : values_) {
       if (x.first == v) return x.second;
     }
-    return Priority();
+    return 0;
   }
 
   private:

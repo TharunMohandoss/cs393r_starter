@@ -1,9 +1,11 @@
+
+#define WEIGHT_COST 1
 // #include<iostream>
 // #include<pair>
 #include "node"
 
 //returns 1 if path found
-int Astar(vector_map::VectorMap map_,Node start_point,Node end_point)
+int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point)
 {
 	SimpleQueue<Node,float> open_queue;
 	SimpleQueue<Node,float> closed_queue;
@@ -14,7 +16,7 @@ int Astar(vector_map::VectorMap map_,Node start_point,Node end_point)
 		Node succesors[8];
 		int succesors_x[] = {-1-1,0,1,1,1,0,-1};//clockwise starting from left
 		int succesors_y[] = {0,1,1,1,0,-1,-1,-1};
-		float distances[] = {1,1.414.1,1.414,1,1.414,1,1.414};
+		float distances[] = {1,1.414,1,1.414,1,1.414,1,1.414};
 		for(int i=0;i<8;i++)
 		{
 			Node cur_succesor = Node(q.i + succesors_x[i],q.j+succesors_y[i],end_point);
@@ -23,12 +25,16 @@ int Astar(vector_map::VectorMap map_,Node start_point,Node end_point)
 		int i = 0;
 		for(auto& succesor in succesors)
 		{
+			if(succesor.NodeIntersectsMap(map_.lines))
+			{
+				continue;
+			}
 			if(succesor==end_point)
 			{
 				end_point.parent = q.GetState();
 				return 1;
 			}
-			succesor.g = q.g + succesor.cost() + distances[i];//to implement cost as value?
+			succesor.g = q.g + WEIGHT_COST*succesor.GetValue() + distances[i];//to implement cost as value?
 			// succesor.h = abs(end_point.i-succesor.i) + abs(end_point.j-succesor.j);//what cost is best?
 			if(open_queue.exists(succesor))
 			{
@@ -49,7 +55,8 @@ int Astar(vector_map::VectorMap map_,Node start_point,Node end_point)
 				}
 			}
 			else
-			{
+			{	
+				succesor.parent = q.GetState();
 				open_queue.Push(succesor,succesor.g+succesor.h);
 			}
 
@@ -58,7 +65,7 @@ int Astar(vector_map::VectorMap map_,Node start_point,Node end_point)
 		closed_queue.Push(q,q.g+q.h);
 
 	}
-	reutn 0;
+	return 0;
 }	
 
 

@@ -22,7 +22,8 @@
 #include <vector>
 
 #include "eigen3/Eigen/Dense"
-#include "node.cc"
+#include "node"
+#include "Astar"
 
 
 #ifndef NAVIGATION_H

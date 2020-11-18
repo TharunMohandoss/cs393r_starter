@@ -90,7 +90,18 @@ Navigation::Navigation(const string& map_file, ros::NodeHandle* n) :
 void Navigation::SetNavGoal(const Vector2f& loc, float angle) {
 	// nav_goal_loc_ = loc;
 	// nav_goal_angle_ = angle;
-	Node node(2,3);
+  	const uint32_t kColor = 0xd67d00;
+	Node start(2,3);
+	Node goal(7,8);
+	Astar(map_,start,goal);
+	visualization::ClearVisualizationMsg(local_viz_msg_);
+	Vector2f p0(0,0);
+	Vector2f p1(1,1);
+	DrawLine(const Vector2f& p0,const Vector2f& p1,kColor,local_viz_msg_);
+	float cur_i=goal.i,cur_j=goal.j;
+	float prev_i,prev_j;
+	string_stream i,j;
+	viz_pub_.publish(local_viz_msg_);
 }
 
 
