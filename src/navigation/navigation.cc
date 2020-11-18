@@ -324,27 +324,32 @@ vector<float> Navigation::SelectCurvature(vector<Vector2f> obstacles){
 		float final_x,final_y;
 		min_fpl_x = -1;
 		min_fpl_y = -1;
-		int min_obstacle = -1;
+		//int min_obstacle = -1;
 		for(unsigned int i=0; i<obstacles.size(); i++){
 			float fpl = CalcPointFPL(obstacles[i], c,final_x,final_y,false);
 			// std::cout<<"i : "<<i<<", fpl : "<<fpl<<", min_fpl : "<<min_fpl<<"\n";
+			//cout<<obstacles[i].x()<<" "<<obstacles[i].y()<<" "<<final_x<<" "<<final_y<<endl;
+			//we priortize avoiding obstalces near by
+                        float obst_dist = sqrt(pow(obstacles[i].x()-final_x, 2) + pow(obstacles[i].y()-final_y, 2));
+			fpl *= obst_dist; //nearby obstalces will have a lower score, hence be selecyted in the next if statement
 			if(fpl <= min_fpl) {
-				min_obstacle = i;
+				//min_obstacle = i;
 				min_fpl = fpl;
 				min_fpl_x = final_x;
 				min_fpl_y = final_y;
 			}
 		}
+		/*
 		if (min_obstacle!=-1)
 		{
 			// std::cout<<"c : "<<c<<"min_i : "<<min_obstacle<<"\n";
 			// std::cout<<"obstacle x : "<<obstacles[min_obstacle].x()<<", obstacle y : "<<obstacles[min_obstacle].y()<<"\n";
 			CalcPointFPL(obstacles[min_obstacle], c,final_x,final_y,true);
-		}
+		}*/
 		//compare score here
 		// might be sketchy
 		// std::cout<<"min_fpl_x : "<<min_fpl_x<<", "<<min_fpl_y<<"\n";
-		float distance_goal = CalcGoalDistance(nav_goal_loc_.x(), 0, min_fpl_x, min_fpl_y);
+		float distance_goal = CalcGoalDistance(nav_goal_loc_.x(), nav_goal_loc_.y(), min_fpl_x, min_fpl_y);
 		float cur_score = CalculateScore(min_fpl, 0, distance_goal);
 		// std::cout<<"min_fpl_x : "<<min_fpl_x<<", min_fpl_y : "<<min_fpl_y<<"\n";
 		// std::cout<<"curvature : "<<c<<" cur_score: "<<cur_score<<", max_score : "<<max_score<<" max_score_c : "<<max_score_curv<<"\n";
