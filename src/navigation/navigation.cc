@@ -93,18 +93,36 @@ Navigation::Navigation(const string& map_file, ros::NodeHandle* n) :
 void Navigation::SetNavGoal(const Vector2f& loc, float angle) {
 	// nav_goal_loc_ = loc;
 	// nav_goal_angle_ = angle;
+	map_.Load("maps/GDC1.txt");
+	cout<<"firstin\n";
   	const uint32_t kColor = 0xd67d00;
-	Node start(2,3);
-	Node goal(7,8);
+	Node start(0,0);
+	Node goal(3,4);
 	Astar(map_,start,goal);
-	visualization::ClearVisualizationMsg(local_viz_msg_);
-	Vector2f p0(0,0);
-	Vector2f p1(1,1);
-	DrawLine(const Vector2f& p0,const Vector2f& p1,kColor,local_viz_msg_);
+	visualization::ClearVisualizationMsg(global_viz_msg_);
 	float cur_i=goal.i,cur_j=goal.j;
-	float prev_i,prev_j;
-	string_stream i,j;
-	viz_pub_.publish(local_viz_msg_);
+	Node cur_node = goal;
+	float prev_i=cur_node.parent->i,prev_j=cur_node.parent->j;
+	cout<<"in\n";
+	while(true)
+	{
+
+		cout<<"in1\n";
+		cout<<"cur_i : "<<cur_i<<", cur_j : "<<cur_j<<", prev_i : "<<prev_i<<", prev_j : "<<prev_j<<endl;
+		Vector2f cur(cur_i,cur_j);
+		Vector2f prev(prev_i,prev_j);
+		visualization::DrawLine(cur,prev,kColor,global_viz_msg_);
+		cur_node = *(cur_node.parent);
+		if(cur_node==start)
+		{
+			break;
+		}
+		cur_i = prev_i;
+		cur_j = prev_j;
+		prev_i = cur_node.parent->i;
+		prev_j = cur_node.parent->j;
+	}
+	viz_pub_.publish(global_viz_msg_);
 }
 
 
@@ -425,3 +443,236 @@ void Navigation::CalculateGrid(Vector2f xy, int& i, int& j) {
 }
 
 }  // namespace navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bool operator == (Node const &  first,Node const & second)
+{
+	return (first.i==second.i) && (first.j==second.j);
+}
+Node::Node(int i, int j) {
+	this->i = i;
+	this->j = j; 
+	this->h = 0;
+	this->g = 0;
+	//need to implement distance from end point as h
+}
+Node::Node(int i, int j,const Node& goal) {
+	this->i = i;
+	this->j = j; 
+	this->g = 0;
+
+	float diff_i = abs(goal.i - this->i);
+	float diff_j = abs(goal.j - this->j);
+	// float min_diff = diff_i;
+	// if(diff_j<min_diff)
+	// {
+	// 	min_diff = diff_j;
+	// }
+	// float max_diff = diff_j + diff_i - min_diff;
+	// this->h = min_diff*1.414 + (max_diff-min_diff);
+	this->h = diff_j + diff_i;
+	//need to implement distance from end point as h
+}
+bool Node::NodeIntersectsMap(vector<line2f> map_lines) {
+
+	for(unsigned int i = 0; i < map_lines.size(); i++) {
+		line2f map_line = map_lines[i];
+		float left_x, right_x, top_y, bottom_y;
+		left_x = this->i * GRID_RES;
+		right_x = (this->i + 1) * GRID_RES;
+		bottom_y = this->j * GRID_RES;
+		top_y = (this->j + 1) * GRID_RES;
+		const line2f line1(left_x, bottom_y, left_x, top_y);
+		const line2f line2(left_x, top_y, right_x, top_y);
+		const line2f line3(right_x, top_y, right_x, bottom_y);
+		const line2f line4(right_x, bottom_y, left_x, bottom_y);
+
+		if(map_line.Intersects(line1) || map_line.Intersects(line2) ||
+			map_line.Intersects(line3) || map_line.Intersects(line4)) {
+			return true;
+		}
+	}
+
+	return false;
+
+}
+float Node::GetValue(vector<line2f> map_lines) {
+	return 0;
+	// float min_dist = std::numeric_limits<float>::max();
+	// for(unsigned int i=0; i<map_lines.size(); i++) {
+	// 	line2f line = map_lines[i];
+	// 	Vector2f point( (this->i+0.5) * GRID_RES, (this->j+0.5) * GRID_RES);
+	// 	float dist_points = pow(line.p0.x()-line.p1.x(), 2) + pow(line.p0.y()-line.p1.y(), 2);
+
+		 
+		
+	// 	if(dist_points == 0) {
+	// 		return -(pow(line.p0.x()-point.x(), 2) + pow(line.p0.y()-point.y(), 2));
+	// 	}
+	// 	float p0_point_x = point.x() - line.p0.x();
+	// 	float p0_point_y = point.y() - line.p0.y();
+
+	// 	float p0_p1_x = line.p1.x() - line.p0.x();
+	// 	float p0_p1_y = line.p1.y() - line.p0.y();
+	// 	float dot = p0_p1_x * p0_point_x + p0_p1_y * p0_point_y;
+	// 	const float t = max((float)0.0, min((float)1.0, dot/dist_points));
+
+	// 	float x_proj = line.p0.x() + t * p0_p1_x;
+	// 	float y_proj = line.p0.y() + t * p0_p1_y;
+
+	// 	float dist = (pow(x_proj - point.x(), 2) + pow(y_proj - point.y(), 2));
+
+	// 	if(dist<min_dist) {
+	// 		min_dist = dist;
+	// 	}
+		
+	// }
+	// return -min_dist;
+}
+float Node::GetPriority()
+{
+	return -this->g - this->h;
+}
+#define WEIGHT_COST 1
+// #include<iostream>
+// #include<pair>
+// #include "node.h"
+#include "simple_queue.h"
+
+#ifndef ASTAR
+#define ASTAR
+
+//returns 1 if path found
+int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point)
+{
+	SimpleQueue<Node,float> open_queue;
+	SimpleQueue<Node,float> closed_queue;
+	open_queue.Push(start_point,start_point.GetPriority());
+	while(!open_queue.Empty())
+	{
+		cout<<"inA\n";
+		Node q = open_queue.Pop();
+		cout<<"q.i : "<<q.i<<", q.j "<<q.j<<endl;
+		Node succesors[8];
+		int succesors_x[] = {-1,-1,0,1,1,1,0,-1};//clockwise starting from left
+		int succesors_y[] = {0,1,1,1,0,-1,-1,-1};
+		float distances[] = {1,1.414,1,1.414,1,1.414,1,1.414};
+		for(int neigh=0;neigh<8;neigh++)
+		{
+			Node cur_succesor = Node(q.i + succesors_x[neigh],q.j+succesors_y[neigh],end_point);
+			succesors[neigh] = cur_succesor;
+		}
+		int i = 0;
+		for(auto& succesor : succesors)
+		{
+			if(succesor.NodeIntersectsMap(map_.lines))
+			{
+				continue;
+			}
+			if(succesor==end_point)
+			{
+				end_point.parent = &q;
+				return 1;
+			}
+			succesor.g = q.g + WEIGHT_COST*succesor.GetValue(map_.lines) + distances[i];//to implement cost as value?
+			// succesor.h = abs(end_point.i-succesor.i) + abs(end_point.j-succesor.j);//what cost is best?
+			if(open_queue.Exists(succesor))
+			{
+				float cur_priority = open_queue.GetPriority(succesor);
+				if(succesor.GetPriority() > cur_priority)
+				{
+					continue;
+					// open_queue.push(succesor,succesor.g+succesor.h);
+				}
+			}
+			else if(closed_queue.Exists(succesor))
+			{
+				float cur_priority = closed_queue.GetPriority(succesor);
+				if(succesor.GetPriority() > cur_priority)
+				{
+					continue;
+					// open_queue.push(succesor,succesor.g+succesor.h);
+				}
+			}
+			else
+			{	
+				succesor.parent = &q;
+				open_queue.Push(succesor,succesor.GetPriority());
+			}
+
+			i++;
+		}
+		closed_queue.Push(q,q.GetPriority());
+
+	}
+	return 0;
+}	
+
+
+
+#endif  // ASTAR

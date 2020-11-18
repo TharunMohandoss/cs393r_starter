@@ -22,8 +22,8 @@
 #include <vector>
 
 #include "eigen3/Eigen/Dense"
-#include "node"
-#include "Astar"
+// #include "node.cc"
+#include "Astar.h"
 
 
 #ifndef NAVIGATION_H
@@ -90,6 +90,9 @@ class Navigation {
   Eigen::Vector2f odom_loc_;
   // Odometry-reported robot angle.
   float odom_angle_;
+
+  // Map of the environment.
+  vector_map::VectorMap map_;
 
   // Whether navigation is complete.
   bool nav_complete_;
