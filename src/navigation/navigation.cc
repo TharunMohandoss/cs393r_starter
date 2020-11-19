@@ -95,17 +95,17 @@ void Navigation::SetNavGoal(const Vector2f& loc, float angle) {
 	// nav_goal_angle_ = angle;
 	map_.Load("maps/GDC1.txt");
 	cout<<"firstin\n";
-  const uint32_t kColor = 0xd67d00;
-	Node start(-92,31);
+  const uint32_t kColor = 0x00FF00;
 	Node goal(-40,18);
+	Node start(-92,31,goal);
 	vector<pair<int,int>> answer;
 	Astar(map_,start,goal,answer);
 	visualization::ClearVisualizationMsg(global_viz_msg_);
 	for(int i =0;i<((int)answer.size()-1);i++)
 	{
 		//cout<<answer[i].first<<","<<answer[i].second<<endl;
-		Vector2f first_point(answer[i].first * GRID_RES, answer[i].second * GRID_RES);
-		Vector2f second_point(answer[i+1].first * GRID_RES, answer[i+1].second * GRID_RES);
+		Vector2f first_point(((answer[i]).first + 0.5) * GRID_RES, (answer[i].second + 0.5) * GRID_RES);
+		Vector2f second_point(((answer[i+1]).first + 0.5) * GRID_RES, (answer[i+1].second + 0.5) * GRID_RES);
 		visualization::DrawLine(first_point, second_point, kColor, global_viz_msg_);
 	}
 	viz_pub_.publish(global_viz_msg_);
@@ -526,7 +526,7 @@ Node::Node(int i, int j,const Node& goal) {
 	// }
 	// float max_diff = diff_j + diff_i - min_diff;
 	// this->h = min_diff*1.414 + (max_diff-min_diff);
-	this->h = diff_j + diff_i;
+	this->h = (diff_j + diff_i);
 	//need to implement distance from end point as h
 }
 bool Node::NodeIntersectsMap(vector<line2f> map_lines) {
@@ -534,10 +534,10 @@ bool Node::NodeIntersectsMap(vector<line2f> map_lines) {
 	for(unsigned int i = 0; i < map_lines.size(); i++) {
 		line2f map_line = map_lines[i];
 		float left_x, right_x, top_y, bottom_y;
-		left_x = this->i * GRID_RES;
-		right_x = (this->i + 1) * GRID_RES;
-		bottom_y = this->j * GRID_RES;
-		top_y = (this->j + 1) * GRID_RES;
+		left_x = this->i  * GRID_RES;
+		right_x = (this->i + 1)  * GRID_RES;
+		bottom_y = this->j  * GRID_RES;
+		top_y = (this->j + 1)  * GRID_RES;
 		const line2f line1(left_x, bottom_y, left_x, top_y);
 		const line2f line2(left_x, top_y, right_x, top_y);
 		const line2f line3(right_x, top_y, right_x, bottom_y);
@@ -553,37 +553,37 @@ bool Node::NodeIntersectsMap(vector<line2f> map_lines) {
 
 }
 float Node::GetValue(vector<line2f> map_lines) {
-	return 0;
-	// float min_dist = std::numeric_limits<float>::max();
-	// for(unsigned int i=0; i<map_lines.size(); i++) {
-	// 	line2f line = map_lines[i];
-	// 	Vector2f point( (this->i+0.5) * GRID_RES, (this->j+0.5) * GRID_RES);
-	// 	float dist_points = pow(line.p0.x()-line.p1.x(), 2) + pow(line.p0.y()-line.p1.y(), 2);
+	
+	float min_dist = std::numeric_limits<float>::max();
+	for(unsigned int i=0; i<map_lines.size(); i++) {
+	 	line2f line = map_lines[i];
+	 	Vector2f point( (this->i+0.5) * GRID_RES, (this->j+0.5) * GRID_RES);
+	 	float dist_points = pow(line.p0.x()-line.p1.x(), 2) + pow(line.p0.y()-line.p1.y(), 2);
 
 		 
 		
-	// 	if(dist_points == 0) {
-	// 		return -(pow(line.p0.x()-point.x(), 2) + pow(line.p0.y()-point.y(), 2));
-	// 	}
-	// 	float p0_point_x = point.x() - line.p0.x();
-	// 	float p0_point_y = point.y() - line.p0.y();
+	 	if(dist_points == 0) {
+	 		return -(pow(line.p0.x()-point.x(), 2) + pow(line.p0.y()-point.y(), 2));
+	 	}
+	 	float p0_point_x = point.x() - line.p0.x();
+	 	float p0_point_y = point.y() - line.p0.y();
 
-	// 	float p0_p1_x = line.p1.x() - line.p0.x();
-	// 	float p0_p1_y = line.p1.y() - line.p0.y();
-	// 	float dot = p0_p1_x * p0_point_x + p0_p1_y * p0_point_y;
-	// 	const float t = max((float)0.0, min((float)1.0, dot/dist_points));
+	 	float p0_p1_x = line.p1.x() - line.p0.x();
+	 	float p0_p1_y = line.p1.y() - line.p0.y();
+	 	float dot = p0_p1_x * p0_point_x + p0_p1_y * p0_point_y;
+	 	const float t = max((float)0.0, min((float)1.0, dot/dist_points));
 
-	// 	float x_proj = line.p0.x() + t * p0_p1_x;
-	// 	float y_proj = line.p0.y() + t * p0_p1_y;
+	 	float x_proj = line.p0.x() + t * p0_p1_x;
+	 	float y_proj = line.p0.y() + t * p0_p1_y;
 
-	// 	float dist = (pow(x_proj - point.x(), 2) + pow(y_proj - point.y(), 2));
+	 	float dist = (pow(x_proj - point.x(), 2) + pow(y_proj - point.y(), 2));
 
-	// 	if(dist<min_dist) {
-	// 		min_dist = dist;
-	// 	}
+	 	if(dist<min_dist) {
+	 		min_dist = dist;
+	 	}
 		
-	// }
-	// return -min_dist;
+	 }
+	 return -min_dist;
 }
 string Node::GetState() {
 	 	string istate = to_string(this->i);
@@ -596,7 +596,7 @@ float Node::GetPriority()
 {
 	return -this->g - this->h;
 }
-#define WEIGHT_COST 1
+#define WEIGHT_COST 0.2
 // #include<iostream>
 // #include<pair>
 // #include "node.h"
@@ -608,6 +608,7 @@ float Node::GetPriority()
 //returns 1 if path found
 int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point,vector<pair<int,int>>& answer)
 {
+	start_point.g = WEIGHT_COST * start_point.GetValue(map_.lines);
 	SimpleQueue<string,float> open_queue;
 	SimpleQueue<string,float> closed_queue;
 	unordered_map<string, Node> node_map;
@@ -659,7 +660,7 @@ int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point,vector<pai
 			if(open_queue.Exists(succesor.GetState()))
 			{
 				float cur_priority = open_queue.GetPriority(succesor.GetState());
-				if(succesor.GetPriority() > cur_priority)
+				if(succesor.GetPriority() < cur_priority)
 				{
 					continue;
 					// open_queue.push(succesor,succesor.g+succesor.h);
@@ -668,7 +669,7 @@ int Astar(vector_map::VectorMap map_,Node start_point,Node& end_point,vector<pai
 			else if(closed_queue.Exists(succesor.GetState()))
 			{
 				float cur_priority = closed_queue.GetPriority(succesor.GetState());
-				if(succesor.GetPriority() > cur_priority)
+				if(succesor.GetPriority() < cur_priority)
 				{
 					continue;
 					// open_queue.push(succesor,succesor.g+succesor.h);

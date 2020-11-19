@@ -1,5 +1,5 @@
 
-#define WEIGHT_COST 1
+//#define WEIGHT_COST 1
 // #include<iostream>
 // #include<pair>
 #include "node.h"
